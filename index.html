@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEEVIN IT SERVICES | Engineering the Future</title>
+    <meta name="description" content="Next-gen infrastructure, security, and software solutions on a global scale.">
+    <link rel="stylesheet" href="index.css">
+    <!-- Performance: Lenis loaded once at bottom -->
+    <style>
+        /* Lightweight Performance-Optimized Noise */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3dyZlZid8fCpERChfXyZ9fS6zsz6urj7q6j7yn10is1CHh0CDg0C6ulV7f0fbt0799Wv/976Yn668u6W3t6Sgo6Sgo6Sgo6Sgo6Sgo6Sgo6T30SdfAAAAAnRSTlMFEZ7i4wAAADVJREFUeNo9zZkCADEIA0G9te7/f7HSH09yYmID8EAWKCmzZ9XQW9FSR9HSR9fS76299f98C9GP986N/vOOfMB5A/9pAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wUBCykB8v08OAAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAWSURBVDhXY2BgYJDmY2BgYODn4+BgA1AAM6Lp6YAAAAAElFTkSuQmCC");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 10000;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 30000;
+            padding: 3rem 4rem;
+            background: transparent;
+        }
+
+        header .nav-link, header .logo {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="noise"></div>
+    
+    <!-- CCTV Observer -->
+    <div class="cctv-container">
+        <img src="gold_security_camera_1778666582828.png" class="cctv-camera" alt="Security Observer">
+        <div class="cctv-light"></div>
+    </div>
+
+    <!-- Global Cinematic Atmosphere -->
+    <div class="hero-spotlight"></div>
+    <div class="hero-beam"></div>
+
+    <!-- Background Infrastructure (Performance Optimized) -->
+    <div class="infrastructure-layer"></div>
+
+    <!-- Header (Lucien-style split nav, sits on dark hero) -->
+    <header>
+        <nav>
+            <div class="nav-left">
+                <a href="#services" class="nav-link">SERVICES</a>
+                <a href="#contact" class="nav-link">CONTACT</a>
+            </div>
+            <div class="nav-center">
+                <a href="#" class="logo">KEEVIN IT</a>
+            </div>
+            <div class="nav-right">
+                <a href="#contact" class="btn-cta">BOOK A CONSULTATION</a>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin:0; padding:0;">
+        <!-- HERO - Lucien Style (Dark, Centered, Ethereal Glow) -->
+        <section class="hero" style="margin-top:0;">
+            <canvas class="hero-particles" id="particleCanvas"></canvas>
+            <div class="hero-ring"></div>
+            <div class="hero-ring-inner"></div>
+            <div class="hero-grain"></div>
+            <div class="hero-content">
+                <div class="hero-cityscape">
+                    <img src="hero-cityscape.png" alt="Keevin IT - Smart City Infrastructure" class="cityscape-img">
+                </div>
+            </div>
+            <div class="hero-metrics" id="metrics-container">
+                <div class="metric-item active"><span class="metric-label">INFRA</span> GLOBAL SCALE DEPLOYMENT</div>
+                <div class="metric-item"><span class="metric-label">SECURE</span> AI-DRIVEN SURVEILLANCE</div>
+                <div class="metric-item"><span class="metric-label">NETWORK</span> FIBER OPTIC SOLUTIONS</div>
+                <div class="metric-item"><span class="metric-label">SOFTWARE</span> BESPOKE ENTERPRISE ERP</div>
+            </div>
+        </section>
+
+        <!-- STATEMENT - Cinematic Word Reveal -->
+        <section class="statement reveal-section" id="statement">
+            <div class="section-accent"></div>
+            <h2 class="statement-text" id="reveal-text">
+                We are a technology and infrastructure partner designing seamless solutions for the modern enterprise. Operating across India and globally, we help businesses secure and scale their operations with world-class precision.
+            </h2>
+        </section>
+
+        <!-- SERVICES - Cinematic Stacking Cards -->
+        <section id="services" class="services-section reveal-section">
+            <div class="services-header">
+                <span class="services-label">What we do</span>
+                <h2 class="services-heading">Our <span>Services</span></h2>
+            </div>
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <div class="card-content">
+                        <span class="card-num">01</span>
+                        <h3 class="card-title">CCTV & <br> Surveillance</h3>
+                        <div class="card-tags">
+                            <span>Smart AI</span>
+                            <span>Remote Monitoring</span>
+                            <span>AMC</span>
+                        </div>
+                        <div class="card-footer-replica">
+                            <div class="footer-icon">✦</div>
+                            <p class="service-desc">Providing high-fidelity surveillance systems with AI-driven monitoring and remote access for ultimate security and peace of mind.</p>
+                        </div>
+                    </div>
+                    <div class="card-image-replica">
+                        <img src="service-cctv.png" alt="CCTV">
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-content">
+                        <span class="card-num">02</span>
+                        <h3 class="card-title">Access <br> Control</h3>
+                        <div class="card-tags">
+                            <span>Biometric</span>
+                            <span>Cloud Attendance</span>
+                            <span>Smart Locks</span>
+                        </div>
+                        <div class="card-footer-replica">
+                            <div class="footer-icon">✦</div>
+                            <p class="service-desc">Next-gen biometric systems and smart locking mechanisms to manage flow and security in your workspace with precision.</p>
+                        </div>
+                    </div>
+                    <div class="card-image-replica">
+                        <img src="service-biometric.png" alt="Biometrics">
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-content">
+                        <span class="card-num">03</span>
+                        <h3 class="card-title">Network <br> Infrastructure</h3>
+                        <div class="card-tags">
+                            <span>Fiber Optics</span>
+                            <span>Wi-Fi 6</span>
+                            <span>LAN/WAN</span>
+                        </div>
+                        <div class="card-footer-replica">
+                            <div class="footer-icon">✦</div>
+                            <p class="service-desc">Robust networking infrastructure designed for high-speed data traffic and seamless connectivity across enterprise environments.</p>
+                        </div>
+                    </div>
+                    <div class="card-image-replica">
+                        <img src="service-networking.png" alt="Networking">
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-content">
+                        <span class="card-num">04</span>
+                        <h3 class="card-title">Software <br> Development</h3>
+                        <div class="card-tags">
+                            <span>Custom Apps</span>
+                            <span>Web Tools</span>
+                            <span>Enterprise ERP</span>
+                        </div>
+                        <div class="card-footer-replica">
+                            <div class="footer-icon">✦</div>
+                            <p class="service-desc">Bespoke software and mobile applications tailored to optimize your business workflows and drive digital transformation.</p>
+                        </div>
+                    </div>
+                    <div class="card-image-replica">
+                        <img src="service-software.png" alt="Software">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BENTO GRID - Metrics of Excellence -->
+        <section class="metrics reveal-section" id="metrics">
+            <div class="bento-grid">
+                <div class="bento-item large">
+                    <div class="bento-visual" style="background-image: url('gold_tech_bento_assets_1778666251301.png'); background-position: center;"></div>
+                    <span class="bento-label">Global Reach</span>
+                    <h3>500+</h3>
+                    <p>Projects delivered across India and international markets.</p>
+                </div>
+                <div class="bento-item small">
+                    <div class="bento-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <span class="bento-label">Experience</span>
+                    <h3>10+</h3>
+                    <p>Years of industry-leading expertise.</p>
+                </div>
+                <div class="bento-item small">
+                    <div class="bento-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <span class="bento-label">Security</span>
+                    <h3>99.9%</h3>
+                    <p>Uptime and reliability guaranteed.</p>
+                </div>
+                <div class="bento-item medium">
+                    <div class="bento-visual" style="background-image: url('gold_tech_bento_assets_1778666251301.png'); background-position: right;"></div>
+                    <span class="bento-label">Innovation</span>
+                    <h3>24/7</h3>
+                    <p>Continuous support and infrastructure monitoring.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER - Cinematic Gold -->
+        <footer id="contact" class="reveal-section">
+            <div class="footer-ring"></div>
+            <h2 class="footer-cta">Let's build <br> something <br> great<span>.</span></h2>
+            <div class="footer-bottom">
+                <div class="footer-info">
+                    <h4>Get in touch</h4>
+                    <a href="mailto:info@keevin.it">info@keevin.it</a>
+                </div>
+                <div class="footer-info" style="text-align: right;">
+                    <h4>Global Reach</h4>
+                    <div style="display: flex; gap: 1.5rem; justify-content: flex-end; font-weight: 600;">
+                        <span>INDIA</span> / <span>GLOBAL</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <!-- Premium Scripting -->
+    <script>
+        // 1. Initialize Lenis Smooth Scroll
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+            infinite: false,
+        })
+
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
+
+        // 2. Scroll Reveal Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // 3. Variable Typography removed (was causing reflow lag on every scroll frame)
+
+        /* CCTV Observer - Tracks Cursor */
+        const cctv = document.querySelector('.cctv-camera');
+        window.addEventListener('mousemove', (e) => {
+            const rect = cctv.getBoundingClientRect();
+            const cctvX = rect.left + rect.width / 2;
+            const cctvY = rect.top + rect.height / 2;
+            
+            const angle = Math.atan2(e.clientY - cctvY, e.clientX - cctvX);
+            const rotation = angle * (180 / Math.PI);
+            
+            requestAnimationFrame(() => {
+                cctv.style.transform = `rotate(${rotation + 90}deg)`;
+            });
+        });
+
+        // 4. Magnetic Buttons - Targeted at specific elements only
+        const magneticButtons = document.querySelectorAll('.nav-link, .btn-cta, .footer-info a');
+        magneticButtons.forEach(btn => {
+            btn.style.willChange = 'transform'; // Performance optimization
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                requestAnimationFrame(() => {
+                    btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+                });
+            });
+            
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = `translate(0px, 0px)`;
+            });
+        });
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Custom Cursor — lightweight CSS transform, no GSAP overhead
+        const cursor = document.querySelector('.cursor');
+        let cursorX = 0, cursorY = 0;
+        window.addEventListener('mousemove', (e) => {
+            cursorX = e.clientX;
+            cursorY = e.clientY;
+            cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+        }, { passive: true });
+
+        document.querySelectorAll('a, .service-card').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.style.scale = '5');
+            el.addEventListener('mouseleave', () => cursor.style.scale = '1');
+        });
+
+        // Metric Cycling (Lucien-style)
+        const metrics = document.querySelectorAll('.metric-item');
+        let currentMetric = 0;
+        setInterval(() => {
+            metrics[currentMetric].classList.remove('active');
+            currentMetric = (currentMetric + 1) % metrics.length;
+            metrics[currentMetric].classList.add('active');
+        }, 3000);
+
+        // Hero Title Reveal
+        gsap.from(".hero-title", { y: 80, opacity: 0, duration: 1.5, ease: "power4.out", delay: 0.3 });
+        gsap.from(".hero-subtitle", { y: 30, opacity: 0, duration: 1, ease: "power4.out", delay: 0.6 });
+
+        // Floating Particles
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() { this.reset(); }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2.5 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.3;
+                this.speedY = (Math.random() - 0.5) * 0.3;
+                this.opacity = Math.random() * 0.5 + 0.1;
+                this.pulse = Math.random() * Math.PI * 2;
+                this.pulseSpeed = Math.random() * 0.02 + 0.005;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.pulse += this.pulseSpeed;
+                if (this.x < -10 || this.x > canvas.width + 10 || this.y < -10 || this.y > canvas.height + 10) this.reset();
+            }
+            draw() {
+                const o = this.opacity * (0.5 + 0.5 * Math.sin(this.pulse));
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 215, 0, ${o})`; /* Warm Gold — no shadowBlur (GPU killer) */
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 30; i++) particles.push(new Particle()); /* Optimized count */
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // Pinned Word Animation (SOHub-style)
+        const revealText = document.querySelector("#reveal-text");
+        const words = revealText.innerText.split(" ");
+        revealText.innerHTML = words.map(word => `<span>${word} </span>`).join("");
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".statement",
+                start: "top top",
+                end: "+=200%",
+                pin: true,
+                scrub: 1
+            }
+        });
+        tl.to(".statement-text span", { color: "#FFFFFF", stagger: 0.1 });
+
+        // SOHub-Style Stacked Cards — CSS sticky does the stacking
+        // GSAP only adds subtle scale-down + opacity when a card gets buried
+        const cards = gsap.utils.toArray('.service-card');
+
+        cards.forEach((card, i) => {
+            if (i < cards.length - 1) {
+                gsap.to(card, {
+                    scale: 0.98,
+                    opacity: 0.6,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: cards[i + 1],
+                        start: 'top 80%',
+                        end: 'top 10%',
+                        scrub: true
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

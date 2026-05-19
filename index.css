@@ -1,0 +1,926 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    cursor: none !important;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+:root {
+    /* Branding & Palette */
+    --bg-light: #C89528;
+    --bg-gold: #A67C00;
+    --bg-dark: #C89528;
+    --bg-hero: #C89528;
+    --text-primary: #FFFFFF;
+    --text-secondary: #FF6B2B;
+    --text-light: #FFFFFF;
+    --white: #FFFFFF;
+    --orange: #FF6B2B;
+    --accent: #FF6B2B;
+    --copper: #B87333;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    /* CORE ARCHITECTURE CONSTANTS - DO NOT MODIFY WITHOUT CAUTION */
+    --card-stack-offset: 3rem;
+    --card-top-base: 6rem;
+    --card-radius: 60px;
+    --card-tab-height: 40px;
+}
+
+html.lenis { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Rich Fixed Gradient: Dark amber edges to bright gold center for the WHOLE site */
+    background: radial-gradient(circle at center, #FFD700 0%, #B8860B 45%, #2a1e00 100%);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Global Cinematic Atmosphere - Fixed across whole site */
+.hero-spotlight, .hero-beam {
+    position: fixed;
+    pointer-events: none;
+    z-index: -10; /* Locked in background */
+}
+
+.infrastructure-wires {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -5;
+    pointer-events: none;
+    opacity: 0.3;
+    overflow: hidden;
+    will-change: transform;
+}
+
+.infrastructure-wires svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-spotlight {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 65%);
+    animation: spotlightPulse 8s infinite ease-in-out;
+}
+
+.hero-beam {
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: translateX(-50%);
+    animation: beamPulse 6s infinite ease-in-out;
+}
+
+h1, h2, h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+}
+
+/* Optimized Cursor - GPU accelerated, zero paint cost */
+.cursor {
+    width: 10px;
+    height: 10px;
+    background: var(--orange);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99999;
+    will-change: transform;
+    transition: scale 0.15s ease;
+    transform: translate(-50px, -50px); /* start offscreen */
+}
+
+/* ========================================
+   HEADER - Lucien Style (sits on hero)
+   ======================================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 30000; /* Absolute front */
+    padding: 2rem 4rem;
+    background: rgba(200, 149, 40, 0.1);
+    backdrop-filter: blur(15px);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left { display: flex; gap: 2rem; flex: 1; }
+.nav-center { flex: 1; display: flex; justify-content: center; }
+.nav-right { flex: 1; display: flex; justify-content: flex-end; }
+
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: var(--orange);
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.nav-link:hover { color: var(--orange); }
+
+.btn-cta {
+    padding: 0.6rem 1.25rem;
+    border: 1px solid rgba(200, 149, 40, 0.2);
+    border-radius: 100px;
+    font-size: 0.8rem;
+    color: var(--bg-gold);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.btn-cta:hover {
+    background: var(--bg-gold);
+    color: white;
+}
+
+/* ========================================
+   HERO - Cinematic Gold with Depth
+   ======================================== */
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    z-index: 2;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.hero-spotlight {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+    z-index: 1;
+    pointer-events: none;
+    animation: spotlightPulse 8s infinite ease-in-out;
+}
+
+.hero-beam {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.4), transparent);
+    z-index: 1;
+    transform: translateX(-50%);
+    pointer-events: none;
+    animation: beamPulse 6s infinite ease-in-out;
+}
+
+.hero-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    height: 60vw;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* More visible */
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+    animation: ringRotate 40s linear infinite;
+}
+
+.hero-ring-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45vw;
+    height: 45vw;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+    animation: ringRotate 25s linear infinite reverse;
+}
+
+.hero-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    height: 60vw;
+    max-width: 900px;
+    max-height: 900px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 1;
+    animation: ringRotate 40s linear infinite;
+}
+
+.hero-ring-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45vw;
+    height: 45vw;
+    max-width: 650px;
+    max-height: 650px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    z-index: 1;
+    animation: ringRotate 25s linear infinite reverse;
+}
+
+@keyframes beamPulse {
+    0%, 100% { opacity: 0.2; width: 1px; }
+    50% { opacity: 0.6; width: 3px; }
+}
+
+@keyframes spotlightPulse {
+    0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+/* Particle canvas layer */
+.hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Subtle noise grain overlay */
+.hero-grain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55vw;
+    height: 55vw;
+    max-width: 800px;
+    max-height: 800px;
+    border: 1px solid rgba(255, 220, 120, 0.12);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+    animation: ringRotate 30s linear infinite;
+}
+
+.hero-ring::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 200, 80, 0.7);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 200, 80, 0.6);
+}
+
+.hero-ring-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35vw;
+    height: 35vw;
+    max-width: 520px;
+    max-height: 520px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-ring {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+@keyframes ringRotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes pulseGlow {
+    0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.7; }
+    50% { transform: translateX(-50%) scale(1.15); opacity: 1; }
+}
+
+@keyframes spotlightPulse {
+    0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.8; }
+    50% { transform: translateX(-50%) scale(1.05); opacity: 1; }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero Cityscape Wireframe */
+.hero-cityscape {
+    width: 100%;
+    max-width: 750px;
+    animation: cityscapeReveal 2s ease-out forwards;
+}
+
+.cityscape-img {
+    width: 100%;
+    height: auto;
+    opacity: 0.9;
+    transition: opacity 0.5s ease;
+    will-change: transform;
+    /* Smooth radial fade — edges dissolve into the hero background */
+    -webkit-mask-image: radial-gradient(ellipse 70% 70% at center, black 40%, transparent 75%);
+    mask-image: radial-gradient(ellipse 70% 70% at center, black 40%, transparent 75%);
+}
+
+.cityscape-img:hover {
+    opacity: 1;
+}
+
+@keyframes cityscapeReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hero-metrics {
+    position: absolute;
+    bottom: 4rem;
+    right: 4rem;
+    text-align: right;
+    font-family: var(--font-mono);
+    z-index: 3;
+}
+
+.metric-item {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.5s ease;
+}
+.metric-item.active { opacity: 1; transform: translateY(0); }
+.metric-label { color: var(--orange); margin-right: 0.5rem; }
+
+/* ========================================
+   STATEMENT - Cinematic Gold
+   ======================================== */
+.statement {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 10rem 4rem;
+    background: transparent; /* Show global gold background */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle Gold Texture to remove the "pale" look */
+.statement::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(200, 149, 40, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0;
+}
+
+/* Subtle accent line */
+.statement .section-accent {
+    position: absolute;
+    top: 0;
+    right: 15%;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(255, 220, 120, 0.2) 40%, rgba(255, 220, 120, 0.2) 60%, transparent 100%);
+    z-index: 0;
+    transform: rotate(5deg);
+}
+
+.statement .section-accent::after {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: -3px;
+    width: 7px;
+    height: 7px;
+    background: rgba(255, 200, 80, 0.6);
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(255, 200, 80, 0.5);
+    animation: accentDotMove 8s ease-in-out infinite;
+}
+
+@keyframes accentDotMove {
+    0%, 100% { top: 20%; }
+    50% { top: 75%; }
+}
+
+.statement-text {
+    font-size: clamp(2rem, 5.5vw, 6vw);
+    line-height: 1.1;
+    max-width: 1200px;
+    font-weight: 800; /* Extra Bold / Thick Orange */
+    position: relative;
+    z-index: 1;
+    color: #FFFFFF; /* High contrast white on gold */
+}
+
+.statement-text span {
+    color: rgba(255, 255, 255, 0.4); /* Subtle white reveal */
+    transition: color 0.1s linear;
+}
+
+/* ========================================
+   SERVICES - Cinematic Stacking Cards
+   ======================================== */
+.services-section {
+    padding: 8rem 4rem 10rem;
+    background: transparent;
+    position: relative;
+    overflow: visible;
+}
+
+/* Services section header */
+.services-header {
+    text-align: center;
+    margin-bottom: 5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.services-label {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--bg-gold);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.services-heading {
+    font-size: clamp(3rem, 7vw, 8vw);
+    line-height: 0.9;
+    color: #ffffff;
+}
+
+.services-heading span {
+    color: #ffffff;
+}
+
+.services-grid {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+/* 
+   ============================================================
+   CORE ARCHITECTURE: SOHUB GOLDEN STACK ENGINE (DO NOT MODIFY)
+   ============================================================
+*/
+.service-card:nth-child(1) { top: var(--card-top-base); z-index: 1; }
+.service-card:nth-child(2) { top: calc(var(--card-top-base) + var(--card-stack-offset)); z-index: 2; }
+.service-card:nth-child(3) { top: calc(var(--card-top-base) + (var(--card-stack-offset) * 2)); z-index: 3; }
+.service-card:nth-child(4) { top: calc(var(--card-top-base) + (var(--card-stack-offset) * 3)); z-index: 4; }
+
+.service-card {
+    background: #FFFFFF;
+    border-radius: var(--card-radius) var(--card-radius) 0 0;
+    padding: 6rem 4rem;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: sticky;
+    
+    /* The "Gold Tab" Header - Linked to Architecture */
+    border-top: var(--card-tab-height) solid var(--bg-gold); 
+    
+    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.08);
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    margin-top: 0;
+}
+/* ============================================================ */
+
+/* Premium Gold Glint Effect */
+.service-card::after, .footer-cta::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(255, 255, 255, 0) 40%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 60%,
+        transparent 100%
+    );
+    transform: skewX(-25deg);
+    animation: goldGlint 8s infinite;
+    pointer-events: none;
+}
+
+@keyframes goldGlint {
+    0% { left: -150%; }
+    15% { left: 200%; }
+    100% { left: 200%; }
+}
+
+.service-card:hover {
+    box-shadow: 0 40px 80px rgba(200, 149, 40, 0.08);
+    border: 1px solid rgba(200, 149, 40, 0.3);
+}
+
+.card-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.card-num {
+    font-size: 0.85rem;
+    color: var(--bg-gold);
+    opacity: 0.6;
+    font-weight: 600;
+}
+
+.card-title {
+    font-size: 6vw;
+    margin: 2rem 0;
+    color: var(--orange);
+    text-shadow: 0 0 40px rgba(255, 107, 43, 0.15);
+}
+
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.card-tags span {
+    padding: 0.4rem 1rem;
+    border: 1px solid rgba(200, 149, 40, 0.2);
+    border-radius: 100px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--bg-gold);
+    background: rgba(200, 149, 40, 0.05);
+    transition: all 0.3s ease;
+}
+
+.card-tags span:hover {
+    border-color: var(--orange);
+    color: var(--orange);
+    background: rgba(255, 107, 43, 0.05);
+}
+
+.card-footer-replica {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-icon {
+    font-size: 2rem;
+    color: var(--orange);
+    flex-shrink: 0;
+    text-shadow: 0 0 20px rgba(255, 107, 43, 0.3);
+}
+
+.service-desc {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #444;
+}
+
+.card-image-replica {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.card-image-replica img {
+    width: 85%;
+    max-width: 420px;
+    height: auto;
+    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5)) drop-shadow(0 0 30px rgba(255, 180, 60, 0.15));
+}
+
+/* Entrance Animation for sections */
+.reveal-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal-section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================================
+   FOOTER - Cinematic Gold
+   ======================================== */
+footer {
+    padding: 10rem 4rem 5rem;
+    background: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(200, 149, 40, 0.1);
+}
+
+/* Radial glow behind footer CTA */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    height: 60vh;
+    background: radial-gradient(ellipse at center, rgba(200, 149, 40, 0.15) 0%, rgba(200, 149, 40, 0.05) 40%, transparent 70%);
+    filter: blur(60px);
+    z-index: 0;
+    pointer-events: none;
+    animation: footerGlow 12s ease-in-out infinite;
+}
+
+@keyframes footerGlow {
+    0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+    50% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+}
+
+/* Geometric ring accent in footer */
+.footer-ring {
+    position: absolute;
+    bottom: -20%;
+    right: -10%;
+    width: 40vw;
+    height: 40vw;
+    max-width: 600px;
+    max-height: 600px;
+    border: 1px solid rgba(255, 220, 120, 0.06);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+    animation: ringRotate 40s linear infinite;
+}
+
+.footer-cta {
+    font-size: 12vw;
+    line-height: 0.85;
+    margin-bottom: 8rem;
+    will-change: transform;
+    color: var(--orange);
+    position: relative;
+    z-index: 1;
+}
+
+.footer-cta span {
+    transition: color 0.3s ease;
+}
+
+/* BENTO GRID - Metrics */
+.metrics {
+    padding: 10rem 4rem;
+    background: transparent; /* Seamless connection */
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 300px);
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.bento-item {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(200, 149, 40, 0.1);
+    border-radius: 40px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.bento-visual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    opacity: 0.15;
+    mix-blend-mode: multiply;
+    transition: opacity 0.4s ease;
+}
+
+.bento-item:hover .bento-visual {
+    opacity: 0.3;
+}
+
+.bento-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--bg-gold);
+    margin-bottom: auto;
+}
+
+.bento-item:hover {
+    border: 1px solid rgba(200, 149, 40, 0.4);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(200, 149, 40, 0.05);
+}
+
+.bento-item.large { grid-column: span 2; grid-row: span 2; background: #fafafa; }
+.bento-item.medium { grid-column: span 2; }
+
+.bento-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--bg-gold);
+    margin-bottom: 1rem;
+}
+
+.bento-item h3 {
+    font-size: 4rem;
+    color: var(--orange);
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.bento-item p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 300px;
+}
+
+/* Infrastructure Connectivity Lines */
+.services-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 15%;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(200, 149, 40, 0.2), transparent);
+    z-index: 0;
+}
+
+.metrics::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(200, 149, 40, 0.2), transparent);
+    z-index: 0;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(255, 200, 80, 0.12);
+    position: relative;
+    z-index: 1;
+}
+
+.footer-info h4 {
+    font-size: 0.85rem;
+    color: rgba(255, 200, 80, 0.5);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.footer-info a {
+    font-size: 1.5rem;
+    color: var(--orange);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.footer-info a:hover {
+    text-shadow: 0 0 20px rgba(255, 200, 80, 0.4);
+}
+
+/* ========================================
+   MOBILE RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+    header { padding: 1.5rem; }
+    .nav-left, .nav-right { display: none; }
+    .hero-title { font-size: 14vw; }
+    .hero-metrics { right: 1.5rem; bottom: 2rem; }
+    .statement { padding: 0 1.5rem; }
+    .statement-text { font-size: 10vw; }
+    .services-section { padding: 5rem 1.5rem 10rem; }
+    .service-card { padding: 2.5rem; height: 70vh; border-radius: 24px; }
+    .card-title { font-size: 10vw; }
+    .card-footer-replica { flex-direction: column; gap: 1rem; margin-top: 2rem; }
+    .card-image-replica { width: 50%; bottom: 2%; right: 2%; }
+    footer { padding: 5rem 1.5rem 3rem; }
+    .footer-cta { font-size: 18vw; margin-bottom: 4rem; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 3rem; }
+}
