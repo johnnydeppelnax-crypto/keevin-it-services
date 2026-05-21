@@ -6,40 +6,13 @@
     <title>KEEVIN IT SERVICES | Engineering the Future</title>
     <meta name="description" content="Next-gen infrastructure, security, and software solutions on a global scale.">
     <link rel="stylesheet" href="index.css">
-    <!-- Performance: Lenis loaded once at bottom -->
-    <style>
-        /* Lightweight Performance-Optimized Noise */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3dyZlZid8fCpERChfXyZ9fS6zsz6urj7q6j7yn10is1CHh0CDg0C6ulV7f0fbt0799Wv/976Yn668u6W3t6Sgo6Sgo6Sgo6Sgo6Sgo6Sgo6T30SdfAAAAAnRSTlMFEZ7i4wAAADVJREFUeNo9zZkCADEIA0G9te7/f7HSH09yYmID8EAWKCmzZ9XQW9FSR9HSR9fS76299f98C9GP986N/vOOfMB5A/9pAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wUBCykB8v08OAAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAWSURBVDhXY2BgYJDmY2BgYODn4+BgA1AAM6Lp6YAAAAAElFTkSuQmCC");
-            opacity: 0.03;
-            pointer-events: none;
-            z-index: 10000;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 30000;
-            padding: 3rem 4rem;
-            background: transparent;
-        }
-
-        header .nav-link, header .logo {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-        }
-    </style>
+    <!-- Styles in index.css -->
 </head>
 <body>
-    <div class="cursor"></div>
-    <div class="noise"></div>
+    <div class="cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"></div>
+    </div>
     
     <!-- CCTV Observer -->
     <div class="cctv-container">
@@ -51,9 +24,6 @@
     <div class="hero-spotlight"></div>
     <div class="hero-beam"></div>
 
-    <!-- Background Infrastructure (Performance Optimized) -->
-    <div class="infrastructure-layer"></div>
-
     <!-- Header (Lucien-style split nav, sits on dark hero) -->
     <header>
         <nav>
@@ -61,9 +31,7 @@
                 <a href="#services" class="nav-link">SERVICES</a>
                 <a href="#contact" class="nav-link">CONTACT</a>
             </div>
-            <div class="nav-center">
-                <a href="#" class="logo">KEEVIN IT</a>
-            </div>
+            <div class="nav-center"></div>
             <div class="nav-right">
                 <a href="#contact" class="btn-cta">BOOK A CONSULTATION</a>
             </div>
@@ -78,9 +46,267 @@
             <div class="hero-ring-inner"></div>
             <div class="hero-grain"></div>
             <div class="hero-content">
-                <div class="hero-cityscape">
+                <div class="hero-cityscape" style="position: relative;">
                     <img src="hero-cityscape.png" alt="Keevin IT - Smart City Infrastructure" class="cityscape-img">
+                    
+                    <!-- K Logo on top of CN Tower Antenna -->
+                    <div class="cn-tower-logo">
+                        <img src="logo.png?v=3" alt="Keevin IT Logo">
+                    </div>
+                    <!-- Precise Building Anchors for SVG connection lines - Positioned exactly on user-pinned buildings -->
+                    <div class="building-anchor anchor-cctv" style="position: absolute; top: 18.0%; left: 36.0%;"></div>
+                    <div class="building-anchor anchor-biometrics" style="position: absolute; top: 36.0%; left: 65.5%;"></div>
+                    <div class="building-anchor anchor-software" style="position: absolute; top: 73.0%; left: 24.5%;"></div>
+                    <div class="building-anchor anchor-network" style="position: absolute; top: 70.0%; left: 66.5%;"></div>
                 </div>
+
+                <!-- Service Diagram Panels - Positioned at hero corners -->
+                
+                <!-- TOP-LEFT: CCTV CAMERAS -->
+                <a href="#svc-cctv" class="svc-panel svc-top-left">
+                    <svg viewBox="0 0 200 130" class="svc-icons">
+                        <!-- Dome camera -->
+                        <g stroke="#fff" stroke-width="1.5" fill="none" transform="translate(15,15)">
+                            <path d="M 10 35 A 20 20 0 0 1 50 35"/>
+                            <rect x="10" y="33" width="40" height="6" rx="2"/>
+                            <circle cx="30" cy="25" r="10"/>
+                            <circle cx="30" cy="25" r="5"/>
+                        </g>
+                        <!-- Bullet camera -->
+                        <g stroke="#fff" stroke-width="1.5" fill="none" transform="translate(80,12)">
+                            <rect x="5" y="10" width="45" height="25" rx="4"/>
+                            <circle cx="38" cy="22" r="8"/>
+                            <circle cx="38" cy="22" r="4"/>
+                            <path d="M 25 0 L 25 10"/>
+                            <rect x="20" y="-2" width="10" height="5" rx="2"/>
+                        </g>
+                        <!-- Monitor screen -->
+                        <g stroke="#fff" stroke-width="1.5" fill="none" transform="translate(15,65)">
+                            <rect x="0" y="0" width="50" height="35" rx="3"/>
+                            <line x1="15" y1="35" x2="35" y2="35"/>
+                            <line x1="10" y1="42" x2="40" y2="42"/>
+                            <line x1="25" y1="35" x2="25" y2="42"/>
+                            <!-- Grid lines inside screen -->
+                            <line x1="25" y1="5" x2="25" y2="30" stroke-width="0.5" opacity="0.4"/>
+                            <line x1="5" y1="17" x2="45" y2="17" stroke-width="0.5" opacity="0.4"/>
+                        </g>
+                        <!-- Recording indicator -->
+                        <g transform="translate(80,70)">
+                            <circle cx="10" cy="10" r="5" fill="none" stroke="var(--orange)" stroke-width="1.5"/>
+                            <circle cx="10" cy="10" r="2" fill="var(--orange)"/>
+                            <text x="22" y="14" fill="var(--orange)" font-family="var(--font-mono)" font-size="8" font-weight="700">REC</text>
+                        </g>
+                    </svg>
+                    <h4 class="svc-panel-title">CCTV CAMERAS</h4>
+                </a>
+                <div class="svc-line svc-line-tr"></div>
+
+                <!-- TOP-RIGHT: BIOMETRICS & SMART DOORS -->
+                <a href="#svc-biometrics" class="svc-panel svc-top-right">
+                    <svg viewBox="0 0 200 130" class="svc-icons">
+                        <!-- High-fidelity detailed fingerprint scan (Gold/Orange) -->
+                        <g stroke="var(--orange)" stroke-width="1.8" fill="none" transform="translate(15,10)">
+                            <!-- Arching ridges -->
+                            <path d="M 6 36 A 16 22 0 0 1 38 36" stroke-linecap="round"/>
+                            <path d="M 10 36 A 12 17 0 0 1 34 36" stroke="#fff" stroke-linecap="round" opacity="0.9"/>
+                            <path d="M 14 36 A 8 12 0 0 1 30 36" stroke-linecap="round"/>
+                            <path d="M 18 36 A 4 7 0 0 1 26 36" stroke="#fff" stroke-linecap="round" opacity="0.9"/>
+                            <path d="M 2 36 A 20 27 0 0 1 42 33" stroke-linecap="round"/>
+                            <!-- Ridges structure lower loop -->
+                            <path d="M 22 36 Q 22 30 24 33" stroke="#fff" stroke-linecap="round"/>
+                            <path d="M 18 43 Q 22 41 26 43" stroke-linecap="round"/>
+                            <!-- Reticle Target Brackets surrounding fingerprint -->
+                            <path d="M 0 8 L 0 2 L 6 2" stroke="var(--orange)" stroke-width="1.2" opacity="0.8"/>
+                            <path d="M 44 2 L 50 2 L 50 8" stroke="var(--orange)" stroke-width="1.2" opacity="0.8"/>
+                            <path d="M 0 32 L 0 38 L 6 38" stroke="var(--orange)" stroke-width="1.2" opacity="0.8"/>
+                            <path d="M 44 38 L 50 38 L 50 32" stroke="var(--orange)" stroke-width="1.2" opacity="0.8"/>
+                            <!-- Scanning laser sweep line -->
+                            <line x1="-2" y1="20" x2="52" y2="20" stroke="var(--orange)" stroke-width="2.5" filter="drop-shadow(0 0 4px var(--orange))" opacity="0.95">
+                                <animate attributeName="y1" values="3;37;3" dur="3s" repeatCount="indefinite" />
+                                <animate attributeName="y2" values="3;37;3" dur="3s" repeatCount="indefinite" />
+                            </line>
+                        </g>
+
+                        <!-- Smart Keycard Door Reader (White & Orange accent) -->
+                        <g stroke="#fff" stroke-width="1.5" fill="none" transform="translate(85,5)">
+                            <!-- Outer Card Reader Panel -->
+                            <rect x="5" y="0" width="42" height="70" rx="6" stroke="var(--orange)" stroke-width="2"/>
+                            <!-- Smart Lock Screen Area -->
+                            <rect x="9" y="4" width="34" height="24" rx="3" fill="rgba(255, 107, 43, 0.05)"/>
+                            <!-- Digital Passcode dots on lock screen -->
+                            <circle cx="16" cy="10" r="1.5" fill="#fff"/>
+                            <circle cx="26" cy="10" r="1.5" fill="#fff"/>
+                            <circle cx="36" cy="10" r="1.5" fill="#fff"/>
+                            <circle cx="16" cy="18" r="1.5" fill="#fff"/>
+                            <circle cx="26" cy="18" r="1.5" fill="var(--orange)"/>
+                            <circle cx="36" cy="18" r="1.5" fill="#fff"/>
+                            <!-- RFID Contactless Wave Symbol -->
+                            <path d="M 21 44 A 4 4 0 0 1 31 44" stroke="var(--orange)" stroke-width="1.8" stroke-linecap="round"/>
+                            <path d="M 17 48 A 9 9 0 0 1 35 48" stroke="#fff" stroke-linecap="round" opacity="0.75"/>
+                            <path d="M 13 52 A 14 14 0 0 1 39 52" stroke="var(--orange)" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/>
+                            <!-- Smart Badge Card Floating / Tapping -->
+                            <g transform="translate(32, 28) rotate(-15)">
+                                <rect x="0" y="0" width="26" height="17" rx="2" stroke="#fff" stroke-width="1.2" fill="#2a1e00" opacity="0.9"/>
+                                <rect x="3" y="3" width="6" height="5" rx="0.5" fill="var(--orange)" stroke="none"/>
+                                <line x1="12" y1="5" x2="22" y2="5" stroke="#fff" stroke-width="1"/>
+                                <line x1="12" y1="9" x2="20" y2="9" stroke="#fff" stroke-width="0.8"/>
+                                <line x1="12" y1="12" x2="18" y2="12" stroke="#fff" stroke-width="0.8"/>
+                            </g>
+                            <!-- Access granted pulse indicators -->
+                            <circle cx="26" cy="63" r="2.5" fill="#00ffcc" stroke="none">
+                                <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" />
+                            </circle>
+                        </g>
+                    </svg>
+                    <h4 class="svc-panel-title">BIOMETRICS &<br>SMART DOORS</h4>
+                </a>
+                <div class="svc-line svc-line-tl"></div>
+
+                <!-- BOTTOM-LEFT: SOFTWARE SERVICES -->
+                <a href="#svc-software" class="svc-panel svc-bottom-left">
+                    <h4 class="svc-panel-title">SOFTWARE<br>SERVICES</h4>
+                    <svg viewBox="0 0 200 130" class="svc-icons">
+                        <!-- Code brackets -->
+                        <g stroke="#fff" stroke-width="2" fill="none" transform="translate(15,10)">
+                            <path d="M 15 0 L 0 20 L 15 40"/>
+                            <path d="M 35 0 L 50 20 L 35 40"/>
+                            <line x1="28" y1="0" x2="22" y2="40" stroke-width="1.5"/>
+                        </g>
+                        <!-- Cloud -->
+                        <g stroke="#fff" stroke-width="1.5" fill="none" transform="translate(80,8)">
+                            <path d="M 15 35 Q 0 35 0 25 Q 0 15 12 15 Q 14 5 25 5 Q 38 5 40 15 Q 50 15 50 25 Q 50 35 38 35 Z"/>
+                            <text x="18" y="28" fill="#fff" font-family="var(--font-mono)" font-size="7" font-weight="700">API</text>
+                        </g>
+                        <!-- Mobile device -->
+                        <g stroke="#fff" stroke-width="1.5" fill="none" transform="translate(15,65)">
+                            <rect x="5" y="0" width="28" height="45" rx="4"/>
+                            <line x1="15" y1="38" x2="23" y2="38" stroke-width="1"/>
+                            <rect x="9" y="5" width="20" height="28" rx="1" stroke-width="0.8"/>
+                        </g>
+                        <!-- Gear / settings -->
+                        <g stroke="#fff" stroke-width="1.5" fill="none" transform="translate(80,70)">
+                            <circle cx="20" cy="20" r="8"/>
+                            <circle cx="20" cy="20" r="3"/>
+                            <line x1="20" y1="5" x2="20" y2="10"/>
+                            <line x1="20" y1="30" x2="20" y2="35"/>
+                            <line x1="5" y1="20" x2="10" y2="20"/>
+                            <line x1="30" y1="20" x2="35" y2="20"/>
+                            <line x1="9" y1="9" x2="13" y2="13"/>
+                            <circle cx="20" cy="20" r="8"/>
+                            <line x1="27" y1="27" x2="31" y2="31"/>
+                            <line x1="9" y1="31" x2="13" y2="27"/>
+                            <line x1="27" y1="13" x2="31" y2="9"/>
+                        </g>
+                    </svg>
+                </a>
+                <div class="svc-line svc-line-br"></div>
+
+                <!-- BOTTOM-RIGHT: NETWORK INFRASTRUCTURE -->
+                <a href="#svc-network" class="svc-panel svc-bottom-right">
+                    <h4 class="svc-panel-title">NETWORK<br>INFRASTRUCTURE</h4>
+                    <svg viewBox="0 0 200 130" class="svc-icons">
+                        <!-- Server rack -->
+                        <g stroke="#fff" stroke-width="1.5" fill="none" transform="translate(15,8)">
+                            <rect x="0" y="0" width="55" height="15" rx="2"/>
+                            <rect x="0" y="18" width="55" height="15" rx="2"/>
+                            <rect x="0" y="36" width="55" height="15" rx="2"/>
+                            <circle cx="8" cy="7" r="2" fill="var(--orange)"/>
+                            <circle cx="8" cy="25" r="2" fill="var(--orange)"/>
+                            <circle cx="8" cy="43" r="2" fill="var(--orange)"/>
+                            <line x1="38" y1="5" x2="48" y2="5" stroke-width="1"/>
+                            <line x1="38" y1="9" x2="48" y2="9" stroke-width="1"/>
+                            <line x1="38" y1="23" x2="48" y2="23" stroke-width="1"/>
+                            <line x1="38" y1="27" x2="48" y2="27" stroke-width="1"/>
+                            <line x1="38" y1="41" x2="48" y2="41" stroke-width="1"/>
+                            
+                            <line x1="10" y1="10" x2="10" y2="3"/>
+                            <line x1="25" y1="10" x2="25" y2="0"/>
+                            <line x1="40" y1="10" x2="40" y2="3"/>
+                        </g>
+                        <!-- Fiber / connection lines -->
+                        <g stroke="#fff" stroke-width="1.2" fill="none" transform="translate(15,65)">
+                            <circle cx="25" cy="20" r="18"/>
+                            <circle cx="25" cy="20" r="6" stroke="var(--orange)"/>
+                            <line x1="25" y1="2" x2="25" y2="14" stroke-dasharray="2 2"/>
+                            <line x1="25" y1="26" x2="25" y2="38" stroke-dasharray="2 2"/>
+                            <line x1="7" y1="20" x2="19" y2="20" stroke-dasharray="2 2"/>
+                            <line x1="31" y1="20" x2="43" y2="20" stroke-dasharray="2 2"/>
+                        </g>
+                        <!-- Signal waves -->
+                        <g stroke="var(--orange)" stroke-width="1.2" fill="none" transform="translate(85,70)">
+                            <path d="M 20 25 Q 10 15 20 5"/>
+                            <path d="M 25 30 Q 8 15 25 0"/>
+                            <path d="M 30 25 Q 40 15 30 5"/>
+                            <path d="M 35 30 Q 48 15 35 0"/>
+                        </g>
+                    </svg>
+                </a>
+                <div class="svc-line svc-line-bl"></div>
+
+                <!-- Magic Dust Flow Lines - Full hero overlay -->
+                <svg class="magic-lines" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+                    <defs>
+                        <filter id="dustGlow">
+                            <feGaussianBlur stdDeviation="3" result="blur"/>
+                            <feMerge>
+                                <feMergeNode in="blur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                        <radialGradient id="dustParticle">
+                            <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+                            <stop offset="50%" stop-color="var(--orange)" stop-opacity="0.8"/>
+                            <stop offset="100%" stop-color="var(--orange)" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+
+                    <!-- Connection curves -->
+                    <path id="path1" d="M 820 400 C 650 370, 480 340, 340 340" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.2" stroke-dasharray="4 6"/>
+                    <circle r="3" fill="#ffffff" filter="url(#dustGlow)"><animateMotion dur="2.5s" repeatCount="indefinite"><mpath href="#path1"/></animateMotion></circle>
+                    <circle r="2" fill="var(--orange)" filter="url(#dustGlow)"><animateMotion dur="2.5s" begin="0.5s" repeatCount="indefinite"><mpath href="#path1"/></animateMotion></circle>
+                    <circle r="1.5" fill="#ffffff" filter="url(#dustGlow)"><animateMotion dur="2.5s" begin="1s" repeatCount="indefinite"><mpath href="#path1"/></animateMotion></circle>
+                    <circle r="2.5" fill="var(--orange)" filter="url(#dustGlow)"><animateMotion dur="2.5s" begin="1.5s" repeatCount="indefinite"><mpath href="#path1"/></animateMotion></circle>
+                    <circle r="1" fill="#ffffff" filter="url(#dustGlow)"><animateMotion dur="2.5s" begin="2s" repeatCount="indefinite"><mpath href="#path1"/></animateMotion></circle>
+
+                    <path id="path2" d="M 1100 400 C 1270 370, 1440 340, 1580 340" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.2" stroke-dasharray="4 6"/>
+                    <circle r="3" fill="#ffffff" filter="url(#dustGlow)"><animateMotion dur="2.8s" repeatCount="indefinite"><mpath href="#path2"/></animateMotion></circle>
+                    <circle r="2" fill="var(--orange)" filter="url(#dustGlow)"><animateMotion dur="2.8s" begin="0.6s" repeatCount="indefinite"><mpath href="#path2"/></animateMotion></circle>
+                    <circle r="1.5" fill="#ffffff" filter="url(#dustGlow)"><animateMotion dur="2.8s" begin="1.2s" repeatCount="indefinite"><mpath href="#path2"/></animateMotion></circle>
+                    <circle r="2.5" fill="var(--orange)" filter="url(#dustGlow)"><animateMotion dur="2.8s" begin="1.8s" repeatCount="indefinite"><mpath href="#path2"/></animateMotion></circle>
+                    <circle r="1" fill="#ffffff" filter="url(#dustGlow)"><animateMotion dur="2.8s" begin="2.4s" repeatCount="indefinite"><mpath href="#path2"/></animateMotion></circle>
+
+                    <path id="path3" d="M 850 580 C 680 610, 510 640, 340 640" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.2" stroke-dasharray="4 6"/>
+                    <circle r="3" fill="#ffffff" filter="url(#dustGlow)"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#path3"/></animateMotion></circle>
+                    <circle r="2" fill="var(--orange)" filter="url(#dustGlow)"><animateMotion dur="3s" begin="0.6s" repeatCount="indefinite"><mpath href="#path3"/></animateMotion></circle>
+                    <circle r="1.5" fill="#ffffff" filter="url(#dustGlow)"><animateMotion dur="3s" begin="1.2s" repeatCount="indefinite"><mpath href="#path3"/></animateMotion></circle>
+                    <circle r="2.5" fill="var(--orange)" filter="url(#dustGlow)"><animateMotion dur="3s" begin="1.8s" repeatCount="indefinite"><mpath href="#path3"/></animateMotion></circle>
+                    <circle r="1" fill="#ffffff" filter="url(#dustGlow)"><animateMotion dur="3s" begin="2.4s" repeatCount="indefinite"><mpath href="#path3"/></animateMotion></circle>
+
+                    <path id="path4" d="M 1070 580 C 1240 610, 1410 640, 1580 640" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.2" stroke-dasharray="4 6"/>
+                    <circle r="3" fill="#ffffff" filter="url(#dustGlow)"><animateMotion dur="3.1s" repeatCount="indefinite"><mpath href="#path4"/></animateMotion></circle>
+                    <circle r="2" fill="var(--orange)" filter="url(#dustGlow)"><animateMotion dur="3.1s" begin="0.7s" repeatCount="indefinite"><mpath href="#path4"/></animateMotion></circle>
+                    <circle r="1.5" fill="#ffffff" filter="url(#dustGlow)"><animateMotion dur="3.1s" begin="1.3s" repeatCount="indefinite"><mpath href="#path4"/></animateMotion></circle>
+                    <circle r="2.5" fill="var(--orange)" filter="url(#dustGlow)"><animateMotion dur="3.1s" begin="2s" repeatCount="indefinite"><mpath href="#path4"/></animateMotion></circle>
+                    <circle r="1" fill="#ffffff" filter="url(#dustGlow)"><animateMotion dur="3.1s" begin="2.6s" repeatCount="indefinite"><mpath href="#path4"/></animateMotion></circle>
+
+                    <!-- Pulsing anchor dots on buildings -->
+                    <circle class="pulse-dot-path1" cx="820" cy="400" r="5" fill="var(--orange)" opacity="0.9">
+                        <animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle class="pulse-dot-path2" cx="1100" cy="400" r="5" fill="var(--orange)" opacity="0.9">
+                        <animate attributeName="r" values="4;8;4" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="1;0.4;1" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle class="pulse-dot-path3" cx="850" cy="580" r="5" fill="var(--orange)" opacity="0.9">
+                        <animate attributeName="r" values="4;8;4" dur="2s" begin="1s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="1;0.4;1" dur="2s" begin="1s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle class="pulse-dot-path4" cx="1070" cy="580" r="5" fill="var(--orange)" opacity="0.9">
+                        <animate attributeName="r" values="4;8;4" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="1;0.4;1" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+                    </circle>
+                </svg>
             </div>
             <div class="hero-metrics" id="metrics-container">
                 <div class="metric-item active"><span class="metric-label">INFRA</span> GLOBAL SCALE DEPLOYMENT</div>
@@ -106,7 +332,7 @@
             </div>
             <div class="services-grid">
 
-                <div class="service-card">
+                <div class="service-card" id="svc-cctv">
                     <div class="card-content">
                         <span class="card-num">01</span>
                         <h3 class="card-title">CCTV & <br> Surveillance</h3>
@@ -125,7 +351,7 @@
                     </div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" id="svc-biometrics">
                     <div class="card-content">
                         <span class="card-num">02</span>
                         <h3 class="card-title">Access <br> Control</h3>
@@ -144,7 +370,7 @@
                     </div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" id="svc-network">
                     <div class="card-content">
                         <span class="card-num">03</span>
                         <h3 class="card-title">Network <br> Infrastructure</h3>
@@ -163,7 +389,7 @@
                     </div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" id="svc-software">
                     <div class="card-content">
                         <span class="card-num">04</span>
                         <h3 class="card-title">Software <br> Development</h3>
@@ -222,21 +448,92 @@
         <!-- FOOTER - Cinematic Gold -->
         <footer id="contact" class="reveal-section">
             <div class="footer-ring"></div>
+            <div class="footer-logo-container"><img src="logo.png?v=3" alt="Keevin IT Logo" class="footer-logo-img"></div>
             <h2 class="footer-cta">Let's build <br> something <br> great<span>.</span></h2>
             <div class="footer-bottom">
-                <div class="footer-info">
-                    <h4>Get in touch</h4>
-                    <a href="mailto:info@keevin.it">info@keevin.it</a>
+                <!-- VISIT US (Left Column) -->
+                <div class="footer-info footer-loc">
+                    <h4>Visit Us</h4>
+                    <p class="footer-address">
+                        <span class="icon-accent">📍</span> Capital Pk Rd, Ayyappa Society,<br>
+                        VIP Hills, Silicon Valley, Madhapur,<br>
+                        Hyderabad, Telangana 500081
+                    </p>
                 </div>
-                <div class="footer-info" style="text-align: right;">
+
+                <!-- GET IN TOUCH (Middle Column) -->
+                <div class="footer-info footer-contact-mid" style="text-align: center;">
+                    <h4>Get in Touch</h4>
+                    <div class="footer-phones">
+                        <span class="icon-accent">📞</span> 
+                        <a href="tel:+917997155156" class="footer-phone">+91 79971 55156</a>
+                    </div>
+                    <div class="footer-email-box">
+                        <span class="icon-accent">✉️</span>
+                        <a href="mailto:keevinitsolutions@gmail.com" class="footer-email">keevinitsolutions@gmail.com</a>
+                    </div>
+                </div>
+
+                <!-- GLOBAL REACH (Right Column) -->
+                <div class="footer-info footer-reach" style="text-align: right;">
                     <h4>Global Reach</h4>
-                    <div style="display: flex; gap: 1.5rem; justify-content: flex-end; font-weight: 600;">
+                    <div class="reach-locations">
                         <span>INDIA</span> / <span>GLOBAL</span>
                     </div>
                 </div>
             </div>
         </footer>
     </main>
+
+    <!-- Booking Modal (Premium Glassmorphism Overlay) -->
+    <div class="booking-modal-overlay" id="bookingModal">
+        <div class="booking-modal-content">
+            <button class="modal-close-btn" id="closeModalBtn" aria-label="Close booking">&times;</button>
+            <div class="modal-form-header">
+                <h3>Book a <span>Consultation</span></h3>
+                <p>Schedule a bespoke session with our technology and infrastructure experts.</p>
+            </div>
+            <form class="booking-form" id="bookingForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="name" required placeholder="Enter your full name">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="emailAddress">Email Address</label>
+                        <input type="email" id="emailAddress" name="email" required placeholder="name@company.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" id="phoneNumber" name="phone" required placeholder="+91 XXXXX XXXXX">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="serviceInterest">Service of Interest</label>
+                    <select id="serviceInterest" name="service" required>
+                        <option value="" disabled selected>Select a service</option>
+                        <option value="cctv">CCTV & Surveillance Systems</option>
+                        <option value="access">Access Control & Biometrics</option>
+                        <option value="network">Network & Fiber Infrastructure</option>
+                        <option value="software">Enterprise Software Development</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="bookingMessage">Brief Requirements</label>
+                    <textarea id="bookingMessage" name="message" rows="3" placeholder="Tell us about your project/infrastructure needs..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit-booking">Submit Consultation Request <span>✦</span></button>
+            </form>
+            
+            <!-- Success State Overlay -->
+            <div class="modal-success-screen" id="successScreen">
+                <div class="success-icon">✦</div>
+                <h3>Request Submitted!</h3>
+                <p>Thank you for reaching out to Keevin IT Services. Our senior solutions architect will contact you within 2 business hours.</p>
+                <button class="btn-success-close" id="successCloseBtn">Close Window</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -319,19 +616,153 @@
 
         gsap.registerPlugin(ScrollTrigger);
 
-        // Custom Cursor — lightweight CSS transform, no GSAP overhead
+        // Custom Cursor — lightweight, highly responsive, supports class-based states
         const cursor = document.querySelector('.cursor');
         let cursorX = 0, cursorY = 0;
         window.addEventListener('mousemove', (e) => {
             cursorX = e.clientX;
             cursorY = e.clientY;
-            cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+            cursor.style.left = `${cursorX}px`;
+            cursor.style.top = `${cursorY}px`;
+            if (!cursor.classList.contains('visible')) {
+                cursor.classList.add('visible');
+            }
         }, { passive: true });
 
-        document.querySelectorAll('a, .service-card').forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.style.scale = '5');
-            el.addEventListener('mouseleave', () => cursor.style.scale = '1');
+        document.querySelectorAll('a, .service-card, button, .svc-panel').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
         });
+
+        // Smooth scroll to anchors with Lenis
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetEl = document.querySelector(targetId);
+                if (targetEl) {
+                    lenis.scrollTo(targetEl, {
+                        offset: -100, // beautiful breathing room at top
+                        duration: 1.5,
+                        immediate: false
+                    });
+                }
+            });
+        });
+
+        // Dynamic Magic Dust Flow Lines connection logic
+        function updateMagicLines() {
+            const svg = document.querySelector('.magic-lines');
+            if (!svg) return;
+            
+            const svgRect = svg.getBoundingClientRect();
+            
+            const cctvAnchor = document.querySelector('.anchor-cctv');
+            const biometricsAnchor = document.querySelector('.anchor-biometrics');
+            const softwareAnchor = document.querySelector('.anchor-software');
+            const networkAnchor = document.querySelector('.anchor-network');
+            
+            const cctvPanel = document.querySelector('.svc-top-left');
+            const biometricsPanel = document.querySelector('.svc-top-right');
+            const softwarePanel = document.querySelector('.svc-bottom-left');
+            const networkPanel = document.querySelector('.svc-bottom-right');
+            
+            if (!cctvAnchor || !biometricsAnchor || !softwareAnchor || !networkAnchor ||
+                !cctvPanel || !biometricsPanel || !softwarePanel || !networkPanel) return;
+                
+            const viewBoxWidth = 1920;
+            const viewBoxHeight = 1080;
+            const scaleX = svgRect.width ? (viewBoxWidth / svgRect.width) : 1;
+            const scaleY = svgRect.height ? (viewBoxHeight / svgRect.height) : 1;
+
+            const getAnchorCenter = (el) => {
+                const r = el.getBoundingClientRect();
+                return {
+                    x: (r.left + r.width / 2 - svgRect.left) * scaleX,
+                    y: (r.top + r.height / 2 - svgRect.top) * scaleY
+                };
+            };
+            
+            const getPanelEdge = (el, isLeft) => {
+                const r = el.getBoundingClientRect();
+                return {
+                    x: ((isLeft ? r.right : r.left) - svgRect.left) * scaleX,
+                    y: (r.top + r.height / 2 - svgRect.top) * scaleY
+                };
+            };
+            
+            const pts = [
+                {
+                    anchor: getAnchorCenter(cctvAnchor),
+                    panel: getPanelEdge(cctvPanel, true),
+                    pathId: '#path1',
+                    pulseClass: '.pulse-dot-path1',
+                    isLeft: true
+                },
+                {
+                    anchor: getAnchorCenter(biometricsAnchor),
+                    panel: getPanelEdge(biometricsPanel, false),
+                    pathId: '#path2',
+                    pulseClass: '.pulse-dot-path2',
+                    isLeft: false
+                },
+                {
+                    anchor: getAnchorCenter(softwareAnchor),
+                    panel: getPanelEdge(softwarePanel, true),
+                    pathId: '#path3',
+                    pulseClass: '.pulse-dot-path3',
+                    isLeft: true
+                },
+                {
+                    anchor: getAnchorCenter(networkAnchor),
+                    panel: getPanelEdge(networkPanel, false),
+                    pathId: '#path4',
+                    pulseClass: '.pulse-dot-path4',
+                    isLeft: false
+                }
+            ];
+            
+            pts.forEach(p => {
+                const startX = p.anchor.x;
+                const startY = p.anchor.y;
+                const endX = p.panel.x;
+                const endY = p.panel.y;
+                
+                const cpOffset = Math.min(Math.abs(endX - startX) * 0.4, 150);
+                const cp1x = startX + (p.isLeft ? -cpOffset : cpOffset);
+                const cp1y = startY;
+                const cp2x = endX + (p.isLeft ? cpOffset : -cpOffset);
+                const cp2y = endY;
+                
+                const d = `M ${startX} ${startY} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${endX} ${endY}`;
+                
+                const pathEl = document.querySelector(p.pathId);
+                if (pathEl) pathEl.setAttribute('d', d);
+                
+                const pulseEl = document.querySelector(p.pulseClass);
+                if (pulseEl) {
+                    pulseEl.setAttribute('cx', startX);
+                    pulseEl.setAttribute('cy', startY);
+                }
+            });
+            
+            // Fade in the connection lines smoothly now that they are properly positioned on the skyscrapers
+            svg.classList.add('active');
+        }
+
+        // Initialize connection updater on event states
+        window.addEventListener('resize', updateMagicLines);
+        window.addEventListener('load', updateMagicLines);
+        
+        // Multiple safety intervals to ensure correct calculations post-render/scroll load
+        setTimeout(updateMagicLines, 200);
+        setTimeout(updateMagicLines, 600);
+        setTimeout(updateMagicLines, 1200);
+        
+        // Also update whenever Lenis scrolls to keep coordinates perfectly synced
+        lenis.on('scroll', updateMagicLines);
 
         // Metric Cycling (Lucien-style)
         const metrics = document.querySelectorAll('.metric-item');
@@ -342,9 +773,6 @@
             metrics[currentMetric].classList.add('active');
         }, 3000);
 
-        // Hero Title Reveal
-        gsap.from(".hero-title", { y: 80, opacity: 0, duration: 1.5, ease: "power4.out", delay: 0.3 });
-        gsap.from(".hero-subtitle", { y: 30, opacity: 0, duration: 1, ease: "power4.out", delay: 0.6 });
 
         // Floating Particles
         const canvas = document.getElementById('particleCanvas');
@@ -428,6 +856,73 @@
                     }
                 });
             }
+        });
+
+        // 5. Booking Modal Controller
+        const bookingModal = document.getElementById('bookingModal');
+        const bookingForm = document.getElementById('bookingForm');
+        const successScreen = document.getElementById('successScreen');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const successCloseBtn = document.getElementById('successCloseBtn');
+        const openModalButtons = document.querySelectorAll('.btn-cta');
+
+        function openModal(e) {
+            if (e) e.preventDefault();
+            bookingModal.classList.add('active');
+            // Disable page scroll
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            bookingModal.classList.remove('active');
+            document.body.style.overflow = '';
+            // Reset form and success state after transitions complete
+            setTimeout(() => {
+                successScreen.classList.remove('active');
+                bookingForm.reset();
+            }, 500);
+        }
+
+        openModalButtons.forEach(btn => {
+            btn.addEventListener('click', openModal);
+        });
+
+        closeModalBtn.addEventListener('click', closeModal);
+        successCloseBtn.addEventListener('click', closeModal);
+
+        // Close on clicking backdrop
+        bookingModal.addEventListener('click', (e) => {
+            if (e.target === bookingModal) {
+                closeModal();
+            }
+        });
+
+        // Close on ESC key press
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && bookingModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // Form Submit Actions & Loader simulation
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const submitBtn = bookingForm.querySelector('.btn-submit-booking');
+            
+            // Animate submission to loading spinner state
+            submitBtn.innerHTML = 'Sending Request... <span class="spinner"></span>';
+            submitBtn.style.pointerEvents = 'none';
+            submitBtn.style.opacity = '0.7';
+            
+            // Simulated 1.5 second API delay
+            setTimeout(() => {
+                successScreen.classList.add('active');
+                
+                // Reset submit button state
+                submitBtn.innerHTML = 'Submit Consultation Request <span>✦</span>';
+                submitBtn.style.pointerEvents = '';
+                submitBtn.style.opacity = '';
+            }, 1500);
         });
     </script>
 </body>
