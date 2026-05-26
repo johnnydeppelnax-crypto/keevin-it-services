@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://keevinit.com
+Host: https://keevin.in
 
 # Sitemap Link
-Sitemap: https://keevinit.com/sitemap.xml
+Sitemap: https://keevin.in/sitemap.xml
