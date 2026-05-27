@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | KEEVIN IT SERVICES</title>
+    <meta name="description" content="Terms of Service, service level agreements, and physical hardware installation terms for Keevin IT Services - Madhapur, Hyderabad.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://keevin.in/terms.html">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #0d0903;
+            --bg-gold: #c89528;
+            --orange: #ff6b2b;
+            --text-light: #f5f2eb;
+            --text-dark: #a19b8f;
+            --font-sans: 'Space Grotesk', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Glow effects matching main site */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -20%;
+            left: -20%;
+            width: 70vw;
+            height: 70vw;
+            background: radial-gradient(circle, rgba(200, 149, 40, 0.04) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -20%;
+            right: -20%;
+            width: 70vw;
+            height: 70vw;
+            background: radial-gradient(circle, rgba(255, 107, 43, 0.03) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Back Button */
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--bg-gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 3rem;
+            transition: all 0.3s ease;
+        }
+        .btn-back:hover {
+            color: var(--text-light);
+            transform: translateX(-4px);
+        }
+
+        /* Branding Header */
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .logo-img {
+            height: 40px;
+            width: auto;
+            filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.35));
+        }
+
+        h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ffffff 40%, var(--bg-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .last-updated {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-dark);
+            letter-spacing: 0.08em;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+        }
+
+        /* Content Panel */
+        .legal-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 3.5rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--bg-gold);
+            margin: 2.5rem 0 1rem;
+            letter-spacing: 0.02em;
+            border-bottom: 1px solid rgba(200, 149, 40, 0.1);
+            padding-bottom: 0.5rem;
+        }
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.65;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            padding-left: 0.5rem;
+        }
+
+        li {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--orange);
+            font-size: 0.75rem;
+            top: 2px;
+        }
+
+        /* Footer */
+        .footer-minimal {
+            text-align: center;
+            margin-top: 5rem;
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.25);
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 3rem 1rem; }
+            .legal-panel { padding: 2rem 1.5rem; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Back Button -->
+        <a href="index.html" class="btn-back">← Back to Homepage</a>
+        
+        <!-- Header -->
+        <div class="header-brand">
+            <img src="logo.png?v=4" alt="Keevin Logo" class="logo-img">
+        </div>
+        <h1>Terms of Service</h1>
+        <div class="last-updated">Last Updated: May 27, 2026</div>
+        
+        <!-- Content Panel -->
+        <div class="legal-panel">
+            <p>Welcome to Keevin IT Services. These Terms of Service ("Terms") govern your engagement, contractual agreements, and the purchase and installation of our IT infrastructure, AI CCTV surveillance, biometric locks, networking, and enterprise software services. By commissioning our services or submitting a booking request, you agree to these Terms.</p>
+
+            <h2>1. Scope of Services</h2>
+            <p>Keevin IT Services designs, deploys, and maintains enterprise-level physical security and computing environments. Our solutions are explicitly divided into:</p>
+            <ul>
+                <li><strong>Surveillance Installations</strong>: Physical deployment of high-fidelity AI-driven CCTV camera feeds and local storage architectures (NVR/NAS).</li>
+                <li><strong>Biometric Security Systems</strong>: Integration of contactless smart keycard readers, localized biometric locks, and smart door access controls.</li>
+                <li><strong>Network Infrastructure</strong>: Designing, running, and configuring enterprise fiber optic routing, switches, and server racks.</li>
+                <li><strong>Bespoke Software Development</strong>: Development and hosting of custom corporate ERP platforms, client-portal APIs, and software integrations.</li>
+            </ul>
+
+            <h2>2. Installation and Client Responsibilities</h2>
+            <p>For all physical security and fiber routing services:</p>
+            <ul>
+                <li>The client must provide safe, unobstructed access to the premises during scheduled installation windows.</li>
+                <li>The client is responsible for obtaining all necessary municipal, corporate, and landlord clearances required for cabling, hardware mounts, and network setups.</li>
+                <li>Stable, high-speed internet connectivity and uninterrupted electrical backup (UPS) must be provided on-site to ensure optimal performance of our AI cameras and biometric readers.</li>
+            </ul>
+
+            <h2>3. Equipment Warranty & Maintenance</h2>
+            <p>All hardware items (such as dome cameras, server racks, and door readers) are covered by manufacturer-direct warranties. Keevin IT Services provides post-installation operational audits and dedicated support periods as outlined in your specific Service Level Agreement (SLA). Annual Maintenance Contracts (AMC) are negotiated under separate, dedicated agreements.</p>
+
+            <h2>4. Acceptable Use of Custom Software</h2>
+            <p>For custom ERP platforms, databases, and software applications built by Keevin IT Services:</p>
+            <ul>
+                <li>We grant you a non-exclusive, fully owned corporate license (upon final invoice clearance) to run, distribute, and utilize the compiled codebase within your organization.</li>
+                <li>You agree not to modify, reverse-engineer, or resell the intellectual property core built by Keevin IT Services to third parties unless explicitly authorized in our software design contract.</li>
+            </ul>
+
+            <h2>5. Service Limitations and Indemnification</h2>
+            <p>While our systems are engineered for high-availability (99.9% uptime targets):</p>
+            <ul>
+                <li>Keevin IT Services is not liable for temporary data-feed blackouts, video feed dropouts, or locked door incidents arising from power outages, third-party internet service provider (ISP) latency, or client-network configuration adjustments.</li>
+                <li>We do not hold or possess backups of your physical camera logs or employee biometric records. The responsibility of routine local NVR and credential backup lies strictly with the client.</li>
+            </ul>
+
+            <h2>6. Governing Law</h2>
+            <p>These Terms, contracts, and service scopes shall be governed by and construed in accordance with the laws of the State of Telangana, India. Any legal disputes arising under these agreements shall be subject to the exclusive jurisdiction of the competent courts in Hyderabad, Telangana, India.</p>
+
+            <h2>7. Contacting Us</h2>
+            <p>If you have any questions regarding our terms, service scopes, or SLAs, please reach out to our legal compliance desk at <strong>keevinitsolutions@gmail.com</strong>.</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-minimal">
+            &copy; 2026 Keevin IT Services. Madhapur, Hyderabad, India. All Rights Reserved.
+        </div>
+    </div>
+
+</body>
+</html>
