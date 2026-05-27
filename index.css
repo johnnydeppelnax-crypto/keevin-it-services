@@ -82,7 +82,7 @@ body::before {
 /* CCTV Observer */
 .cctv-container {
     position: fixed;
-    top: 3.5rem;
+    top: 0.6rem;
     right: 18rem; /* Place in header next to CTA */
     width: 60px;
     height: 60px;
@@ -194,7 +194,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 30000; /* Absolute front */
-    padding: 3rem 4rem;
+    padding: 1.25rem 4rem;
     background: transparent;
     backdrop-filter: blur(15px);
 }
@@ -224,7 +224,7 @@ nav {
 }
 
 .logo-img {
-    height: 48px; /* Balanced height for modern navigation bar */
+    height: 38px; /* Balanced height for modern navigation bar */
     width: auto;
     object-fit: contain;
     filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.35));
