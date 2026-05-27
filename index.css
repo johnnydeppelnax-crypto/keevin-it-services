@@ -560,9 +560,7 @@ a.svc-panel {
 }
 
 @media (max-width: 1024px) {
-    .magic-lines { display: none !important; }
     .svc-line { display: none !important; }
-    .building-anchor { display: none !important; }
 
     /* Scale down corner service panels for tablet */
     .svc-panel { opacity: 1; }
