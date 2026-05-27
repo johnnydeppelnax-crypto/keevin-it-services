@@ -153,6 +153,7 @@
     <header>
         <nav>
             <div class="nav-left">
+                <a href="#" class="nav-link">HOME</a>
                 <a href="#services" class="nav-link">SERVICES</a>
                 <a href="#contact" class="nav-link">CONTACT</a>
             </div>
@@ -162,7 +163,23 @@
             <div class="nav-right">
                 <a href="#contact" class="btn-cta">BOOK A CONSULTATION</a>
             </div>
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </nav>
+
+        <!-- MOBILE MENU OVERLAY -->
+        <div class="mobile-menu-overlay">
+            <nav class="mobile-nav-links">
+                <a href="#" class="mobile-nav-link">HOME</a>
+                <a href="#services" class="mobile-nav-link">SERVICES</a>
+                <a href="#contact" class="mobile-nav-link">CONTACT</a>
+                <a href="#contact" class="btn-cta mobile-cta">BOOK A CONSULTATION</a>
+            </nav>
+        </div>
     </header>
 
     <main style="margin:0; padding:0;">
@@ -1073,6 +1090,27 @@
                 submitBtn.style.opacity = '';
             }, 1500);
         });
+        // Mobile Menu Toggler
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const menuOverlay = document.querySelector('.mobile-menu-overlay');
+        const headerEl = document.querySelector('header');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link, .mobile-cta');
+
+        if (menuToggle && menuOverlay) {
+            menuToggle.addEventListener('click', () => {
+                headerEl.classList.toggle('mobile-menu-active');
+                menuOverlay.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    headerEl.classList.remove('mobile-menu-active');
+                    menuOverlay.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                });
+            });
+        }
     </script>
 </body>
 </html>
