@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <title>KEEVIN IT SERVICES | Engineering the Future | Hyderabad, India</title>
     
     <!-- Primary Meta Tags -->
@@ -167,7 +171,7 @@
                 <a href="#contact" class="btn-cta">BOOK A CONSULTATION</a>
             </div>
             <!-- Mobile Menu Toggle Button -->
-            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -677,16 +681,16 @@
             <form class="booking-form" id="bookingForm">
                 <div class="form-group">
                     <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" name="name" required placeholder="Enter your full name">
+                    <input type="text" id="fullName" name="name" required placeholder="Enter your full name" autocomplete="name">
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="emailAddress">Email Address</label>
-                        <input type="email" id="emailAddress" name="email" required placeholder="name@company.com">
+                        <input type="email" id="emailAddress" name="email" required placeholder="name@company.com" autocomplete="email">
                     </div>
                     <div class="form-group">
                         <label for="phoneNumber">Phone Number</label>
-                        <input type="tel" id="phoneNumber" name="phone" required placeholder="+91 XXXXX XXXXX">
+                        <input type="tel" id="phoneNumber" name="phone" required placeholder="+91 XXXXX XXXXX" autocomplete="tel">
                     </div>
                 </div>
                 <div class="form-group">
@@ -955,10 +959,12 @@
         }, 3000);
 
 
-        // Floating Particles
+        // Floating Particles (optimized with IntersectionObserver to avoid background CPU load)
         const canvas = document.getElementById('particleCanvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
+        let isHeroVisible = true;
+        let particleAnimationId = null;
 
         function resizeCanvas() {
             canvas.width = canvas.offsetWidth;
@@ -997,11 +1003,27 @@
         for (let i = 0; i < 30; i++) particles.push(new Particle()); /* Optimized count */
 
         function animateParticles() {
+            if (!isHeroVisible) {
+                particleAnimationId = null;
+                return;
+            }
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             particles.forEach(p => { p.update(); p.draw(); });
-            requestAnimationFrame(animateParticles);
+            particleAnimationId = requestAnimationFrame(animateParticles);
         }
-        animateParticles();
+        
+        // Start/Stop canvas rendering loop based on hero visibility
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isHeroVisible = entry.isIntersecting;
+                if (isHeroVisible && !particleAnimationId) {
+                    animateParticles();
+                }
+            });
+        }, { threshold: 0.05 });
+        
+        const heroSection = document.querySelector('.hero');
+        if (heroSection) heroObserver.observe(heroSection);
 
         // Pinned Word Animation (SOHub-style)
         const revealText = document.querySelector("#reveal-text");
@@ -1125,7 +1147,7 @@
                 submitBtn.style.opacity = '';
             });
         });
-        // Mobile Menu Toggler
+        // Mobile Menu Toggler (Accessibly enhanced with ARIA state updates)
         const menuToggle = document.querySelector('.mobile-menu-toggle');
         const menuOverlay = document.querySelector('.mobile-menu-overlay');
         const headerEl = document.querySelector('header');
@@ -1133,9 +1155,10 @@
 
         if (menuToggle && menuOverlay) {
             menuToggle.addEventListener('click', () => {
-                headerEl.classList.toggle('mobile-menu-active');
+                const isActive = headerEl.classList.toggle('mobile-menu-active');
                 menuOverlay.classList.toggle('active');
                 document.body.classList.toggle('menu-open');
+                menuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
             });
 
             mobileLinks.forEach(link => {
@@ -1143,6 +1166,7 @@
                     headerEl.classList.remove('mobile-menu-active');
                     menuOverlay.classList.remove('active');
                     document.body.classList.remove('menu-open');
+                    menuToggle.setAttribute('aria-expanded', 'false');
                 });
             });
         }
