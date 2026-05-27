@@ -555,8 +555,10 @@ a.svc-panel {
 }
 
 @media (max-width: 1024px) {
-    .svc-panel { display: none; }
-    .magic-lines { display: none; }
+    .svc-panel { display: none !important; }
+    .magic-lines { display: none !important; }
+    .svc-line { display: none !important; }
+    .building-anchor { display: none !important; }
 }
 
 .hero-metrics {
@@ -1179,19 +1181,19 @@ footer::before {
     .cctv-container { display: none; }
 
     /* --- Hero --- */
-    .hero { height: auto; min-height: 100vh; min-height: 100dvh; }
+    .hero { height: auto; min-height: 100vh; min-height: 100dvh; overflow: hidden; }
     .hero-content {
         padding: 0 5%;
         padding-bottom: 3vh;
-        padding-top: 10vh;
+        padding-top: 12vh;
         flex-direction: column;
         align-items: center;
     }
     .hero-cityscape {
-        max-width: 85vw;
+        max-width: 75vw;
         margin: 0 auto;
     }
-    .cn-tower-logo img { width: 280px; }
+    .cn-tower-logo img { width: 240px; }
     @keyframes towerLogoFloat {
         0%, 100% { transform: translate(-50%, -45%); }
         50% { transform: translate(-50%, calc(-45% - 10px)); }
@@ -1200,6 +1202,7 @@ footer::before {
     .hero-ring-inner { width: 60vw; height: 60vw; }
     .hero-metrics { right: 1.5rem; bottom: 1.5rem; }
     .hero-metrics .metric-item { font-size: 0.65rem; }
+    .hero-spotlight, .hero-beam { display: none; }
 
     /* --- Statement --- */
     .statement { padding: 6rem 1.5rem; min-height: 80vh; }
@@ -1215,18 +1218,25 @@ footer::before {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
         padding: 2.5rem 1.75rem;
-        height: auto;
-        min-height: auto;
+        height: auto !important;
+        min-height: auto !important;
         border-radius: 24px 24px 0 0;
         gap: 2rem;
         border-top-width: 28px;
+        position: relative !important;
+        top: auto !important;
     }
 
-    :root {
-        --card-radius: 24px;
-        --card-top-base: 4rem;
-        --card-stack-offset: 2rem;
-        --card-tab-height: 28px;
+    .service-card:nth-child(1),
+    .service-card:nth-child(2),
+    .service-card:nth-child(3),
+    .service-card:nth-child(4) {
+        top: auto !important;
+        position: relative !important;
+    }
+
+    .services-grid {
+        gap: 1.5rem;
     }
 
     .card-title { font-size: 9vw; margin: 1rem 0; }
