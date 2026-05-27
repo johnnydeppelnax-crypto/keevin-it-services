@@ -231,6 +231,14 @@ nav {
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
 }
 
+/* Hide mobile-specific navigation elements on desktop by default */
+.mobile-menu-toggle {
+    display: none !important;
+}
+.mobile-menu-overlay {
+    display: none !important;
+}
+
 .logo:hover .logo-img {
     transform: scale(1.08);
     filter: brightness(0) invert(1) drop-shadow(0 0 16px rgba(255, 255, 255, 0.65));
@@ -1190,7 +1198,7 @@ footer::before {
 
     /* --- Mobile Menu Button & Overlay --- */
     .mobile-menu-toggle {
-        display: flex;
+        display: flex !important;
         flex-direction: column;
         justify-content: space-between;
         width: 24px;
@@ -1237,7 +1245,7 @@ footer::before {
         backdrop-filter: blur(25px);
         -webkit-backdrop-filter: blur(25px);
         z-index: 99;
-        display: flex;
+        display: flex !important;
         align-items: center;
         justify-content: center;
         opacity: 0;
