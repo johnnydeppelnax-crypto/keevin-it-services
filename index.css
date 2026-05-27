@@ -1121,26 +1121,210 @@ footer::before {
 
 
 /* ========================================
-   MOBILE RESPONSIVE
+   TOUCH DEVICE - Disable custom cursor
+   ======================================== */
+@media (hover: none) and (pointer: coarse) {
+    *, *::before, *::after {
+        cursor: auto !important;
+    }
+    .cursor { display: none !important; }
+}
+
+/* ========================================
+   TABLET RESPONSIVE (≤1024px)
+   ======================================== */
+@media (max-width: 1024px) {
+    header { padding: 2rem 2.5rem; }
+    .nav-left { gap: 1.5rem; }
+
+    .hero-content { padding: 0 3%; padding-bottom: 4vh; }
+    .hero-cityscape { max-width: min(55vw, 600px); }
+
+    .cn-tower-logo img { width: 350px; }
+
+    .statement { padding: 8rem 2.5rem; }
+    .services-section { padding: 6rem 2.5rem 10rem; }
+
+    .service-card {
+        padding: 4rem 3rem;
+        height: auto;
+        min-height: 60vh;
+        border-radius: 36px 36px 0 0;
+    }
+
+    .card-title { font-size: 7vw; }
+
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+    .bento-item.large { grid-column: span 2; grid-row: span 1; }
+    .bento-item.medium { grid-column: span 2; }
+
+    .metrics { padding: 6rem 2.5rem; }
+
+    footer { padding: 8rem 2.5rem 4rem; }
+    .footer-cta { font-size: 10vw; margin-bottom: 5rem; }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE (≤768px)
    ======================================== */
 @media (max-width: 768px) {
-    header { padding: 1.5rem; }
+    /* --- Header & Nav --- */
+    header { padding: 1.25rem 1.5rem; }
     .nav-left, .nav-right { display: none; }
+    .nav-center { justify-content: center; }
+    .logo-img { height: 36px; }
     .cctv-container { display: none; }
-    .hero-metrics { right: 1.5rem; bottom: 2rem; }
-    .statement { padding: 0 1.5rem; }
-    .statement-text { font-size: 10vw; }
-    .services-section { padding: 5rem 1.5rem 10rem; }
-    .service-card { padding: 2.5rem; height: 70vh; border-radius: 24px; }
-    .card-title { font-size: 10vw; }
-    .card-footer-replica { flex-direction: column; gap: 1rem; margin-top: 2rem; }
-    .card-image-replica { width: 50%; bottom: 2%; right: 2%; }
+
+    /* --- Hero --- */
+    .hero { height: auto; min-height: 100vh; min-height: 100dvh; }
+    .hero-content {
+        padding: 0 5%;
+        padding-bottom: 3vh;
+        padding-top: 10vh;
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-cityscape {
+        max-width: 85vw;
+        margin: 0 auto;
+    }
+    .cn-tower-logo img { width: 280px; }
+    @keyframes towerLogoFloat {
+        0%, 100% { transform: translate(-50%, -45%); }
+        50% { transform: translate(-50%, calc(-45% - 10px)); }
+    }
+    .hero-ring { width: 80vw; height: 80vw; }
+    .hero-ring-inner { width: 60vw; height: 60vw; }
+    .hero-metrics { right: 1.5rem; bottom: 1.5rem; }
+    .hero-metrics .metric-item { font-size: 0.65rem; }
+
+    /* --- Statement --- */
+    .statement { padding: 6rem 1.5rem; min-height: 80vh; }
+    .statement-text { font-size: 8vw; line-height: 1.15; }
+    .statement .section-accent { display: none; }
+
+    /* --- Services --- */
+    .services-section { padding: 4rem 1.25rem 8rem; }
+    .services-heading { font-size: clamp(2.5rem, 10vw, 5rem); }
+    .services-header { margin-bottom: 3rem; }
+
+    .service-card {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        padding: 2.5rem 1.75rem;
+        height: auto;
+        min-height: auto;
+        border-radius: 24px 24px 0 0;
+        gap: 2rem;
+        border-top-width: 28px;
+    }
+
+    :root {
+        --card-radius: 24px;
+        --card-top-base: 4rem;
+        --card-stack-offset: 2rem;
+        --card-tab-height: 28px;
+    }
+
+    .card-title { font-size: 9vw; margin: 1rem 0; }
+    .card-num { font-size: 0.75rem; }
+    .service-desc { font-size: 0.95rem; }
+
+    .card-footer-replica {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .card-image-replica {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        order: -1;
+    }
+    .card-image-replica img {
+        width: 65%;
+        max-width: 280px;
+    }
+
+    .card-tags { gap: 0.4rem; margin-top: 1rem; }
+    .card-tags span { font-size: 0.6rem; padding: 0.3rem 0.75rem; }
+
+    /* --- Bento / Metrics --- */
+    .metrics { padding: 4rem 1.25rem; }
+    .bento-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 1.25rem;
+    }
+    .bento-item.large,
+    .bento-item.medium { grid-column: span 1; grid-row: span 1; }
+    .bento-item { border-radius: 24px; padding: 2rem; min-height: 200px; }
+    .bento-item h3 { font-size: 2.75rem; }
+    .bento-item p { font-size: 0.95rem; max-width: 100%; }
+
+    /* --- Footer --- */
     footer { padding: 5rem 1.5rem 3rem; }
-    .footer-cta { font-size: 18vw; margin-bottom: 4rem; }
-    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 3rem; }
+    .footer-cta {
+        font-size: 12vw;
+        margin-bottom: 3rem;
+        line-height: 0.95;
+    }
+    .footer-cta span { display: inline; }
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2.5rem;
+    }
     .footer-contact-mid { align-items: flex-start !important; text-align: left !important; }
     .footer-reach { align-items: flex-start !important; text-align: left !important; }
     .footer-phones, .footer-email-box { flex-wrap: wrap; }
+    .footer-phone, .footer-email { font-size: 0.95rem !important; }
+    .footer-logo-img { height: 60px; }
+    .footer-ring { display: none; }
+
+    /* --- Booking Modal --- */
+    .booking-modal-content {
+        width: 95%;
+        padding: 2.5rem 1.75rem;
+        border-radius: 24px;
+        max-height: 90vh;
+        max-height: 90dvh;
+        overflow-y: auto;
+    }
+    .modal-form-header h3 { font-size: 1.75rem; }
+    .modal-close-btn { top: 1.25rem; right: 1.25rem; font-size: 1.75rem; }
+}
+
+/* ========================================
+   SMALL PHONE (≤480px)
+   ======================================== */
+@media (max-width: 480px) {
+    header { padding: 1rem; }
+    .logo-img { height: 30px; }
+
+    .hero-cityscape { max-width: 92vw; }
+    .cn-tower-logo img { width: 220px; }
+
+    .statement-text { font-size: 7.5vw; }
+
+    .services-heading { font-size: clamp(2rem, 9vw, 3.5rem); }
+    .service-card { padding: 2rem 1.5rem; }
+    .card-title { font-size: 10vw; }
+    .card-image-replica img { width: 75%; max-width: 240px; }
+
+    .bento-item h3 { font-size: 2.25rem; }
+    .bento-item { padding: 1.75rem; }
+
+    .footer-cta { font-size: 13vw; }
+    .footer-address { font-size: 0.85rem; }
+
+    .booking-modal-content { padding: 2rem 1.25rem; }
+    .modal-form-header h3 { font-size: 1.5rem; }
+    .btn-submit-booking { padding: 0.9rem 1.5rem; font-size: 0.9rem; }
 }
 
 /* ========================================
