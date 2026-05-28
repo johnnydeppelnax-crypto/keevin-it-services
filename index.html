@@ -766,20 +766,26 @@
 
         // 3. Variable Typography removed (was causing reflow lag on every scroll frame)
 
-        /* CCTV Observer - Tracks Cursor */
+        /* CCTV Observer - Tracks Cursor (Optimized to prevent layout thrashing on mousemove) */
         const cctv = document.querySelector('.cctv-camera');
+        let cctvRect = cctv.getBoundingClientRect();
+        let cctvX = cctvRect.left + cctvRect.width / 2;
+        let cctvY = cctvRect.top + cctvRect.height / 2;
+
+        window.addEventListener('resize', () => {
+            cctvRect = cctv.getBoundingClientRect();
+            cctvX = cctvRect.left + cctvRect.width / 2;
+            cctvY = cctvRect.top + cctvRect.height / 2;
+        });
+
         window.addEventListener('mousemove', (e) => {
-            const rect = cctv.getBoundingClientRect();
-            const cctvX = rect.left + rect.width / 2;
-            const cctvY = rect.top + rect.height / 2;
-            
             const angle = Math.atan2(e.clientY - cctvY, e.clientX - cctvX);
             const rotation = angle * (180 / Math.PI);
             
             requestAnimationFrame(() => {
                 cctv.style.transform = `rotate(${rotation + 90}deg)`;
             });
-        });
+        }, { passive: true });
 
         // 4. Magnetic Buttons - Targeted at specific elements only
         const magneticButtons = document.querySelectorAll('.nav-link, .btn-cta, .footer-info a');
@@ -802,14 +808,15 @@
 
         gsap.registerPlugin(ScrollTrigger);
 
-        // Custom Cursor — lightweight, highly responsive, supports class-based states
+        // Custom Cursor — lightweight, highly responsive, GPU accelerated
         const cursor = document.querySelector('.cursor');
         let cursorX = 0, cursorY = 0;
         window.addEventListener('mousemove', (e) => {
             cursorX = e.clientX;
             cursorY = e.clientY;
-            cursor.style.left = `${cursorX}px`;
-            cursor.style.top = `${cursorY}px`;
+            requestAnimationFrame(() => {
+                cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
+            });
             if (!cursor.classList.contains('visible')) {
                 cursor.classList.add('visible');
             }
@@ -947,8 +954,8 @@
         setTimeout(updateMagicLines, 600);
         setTimeout(updateMagicLines, 1200);
         
-        // Also update whenever Lenis scrolls to keep coordinates perfectly synced
-        lenis.on('scroll', updateMagicLines);
+        // Also update whenever Lenis scrolls to keep coordinates perfectly synced (Disabled on-scroll to prevent layout-thrashing scroll-jank)
+        // lenis.on('scroll', updateMagicLines);
 
         // Metric Cycling (Lucien-style)
         const metrics = document.querySelectorAll('.metric-item');
