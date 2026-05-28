@@ -690,7 +690,7 @@
                     </div>
                     <div class="form-group">
                         <label for="phoneNumber">Phone Number</label>
-                        <input type="tel" id="phoneNumber" name="phone" required placeholder="+91 XXXXX XXXXX" autocomplete="tel">
+                        <input type="tel" id="phoneNumber" name="phone" required placeholder="+91 XXXXX XXXXX" autocomplete="tel" pattern="[0-9+\s\-]{10,20}" title="Please enter a valid phone number (minimum 10 digits)">
                     </div>
                 </div>
                 <div class="form-group">
@@ -721,9 +721,9 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js" integrity="sha512-R/7crPhk8RiYHQ/e12XHAfLe3Z0u146d5H2lqGSBxOTOzXfHSHY7HcyzKE2VNRSQCU2aapF25HgBE9q5wgnYBw==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
     <!-- Premium Scripting -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {

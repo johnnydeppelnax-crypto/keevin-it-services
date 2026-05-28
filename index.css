@@ -1142,10 +1142,10 @@ footer::before {
     align-items: center;
     padding-top: 2rem;
     margin-top: 4rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(42, 30, 0, 0.1);
     font-family: var(--font-mono);
     font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(42, 30, 0, 0.6);
     letter-spacing: 0.05em;
     position: relative;
     z-index: 1;
@@ -1158,7 +1158,7 @@ footer::before {
 }
 
 .footer-legal-link {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(42, 30, 0, 0.6);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -1168,7 +1168,7 @@ footer::before {
 }
 
 .footer-sub .divider {
-    color: rgba(255, 255, 255, 0.15);
+    color: rgba(42, 30, 0, 0.3);
 }
 
 
@@ -1288,6 +1288,7 @@ footer::before {
         justify-content: center;
         opacity: 0;
         pointer-events: none;
+        touch-action: none; /* Prevents scroll-leak propagation to background body in iOS Safari */
         transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
