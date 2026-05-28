@@ -725,6 +725,14 @@
                 <p>Thank you for reaching out to Keevin IT Services. Our senior solutions architect will contact you within 2 business hours.</p>
                 <button class="btn-success-close" id="successCloseBtn">Close Window</button>
             </div>
+            
+            <!-- Error State Overlay -->
+            <div class="modal-error-screen" id="errorScreen">
+                <div class="error-icon">✕</div>
+                <h3>Submission Failed</h3>
+                <p id="errorText">Oops! There was a problem submitting your form. Please check your connection and try again.</p>
+                <button class="btn-error-close" id="errorCloseBtn">Try Again</button>
+            </div>
         </div>
     </div>
 
@@ -829,6 +837,14 @@
                 cursor.classList.add('visible');
             }
         }, { passive: true });
+
+        // Fade out custom cursor when mouse leaves the browser window boundary context
+        document.addEventListener('mouseleave', () => {
+            cursor.classList.remove('visible');
+        });
+        document.addEventListener('mouseenter', () => {
+            cursor.classList.add('visible');
+        });
 
         document.querySelectorAll('a, .service-card, button, .svc-panel').forEach(el => {
             el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
@@ -1085,8 +1101,10 @@
         const bookingModal = document.getElementById('bookingModal');
         const bookingForm = document.getElementById('bookingForm');
         const successScreen = document.getElementById('successScreen');
+        const errorScreen = document.getElementById('errorScreen');
         const closeModalBtn = document.getElementById('closeModalBtn');
         const successCloseBtn = document.getElementById('successCloseBtn');
+        const errorCloseBtn = document.getElementById('errorCloseBtn');
         const openModalButtons = document.querySelectorAll('.btn-cta');
 
         function openModal(e) {
@@ -1099,9 +1117,10 @@
         function closeModal() {
             bookingModal.classList.remove('active');
             document.body.style.overflow = '';
-            // Reset form and success state after transitions complete
+            // Reset form and success/error states after transitions complete
             setTimeout(() => {
                 successScreen.classList.remove('active');
+                errorScreen.classList.remove('active');
                 bookingForm.reset();
             }, 500);
         }
@@ -1112,6 +1131,9 @@
 
         closeModalBtn.addEventListener('click', closeModal);
         successCloseBtn.addEventListener('click', closeModal);
+        errorCloseBtn.addEventListener('click', () => {
+            errorScreen.classList.remove('active');
+        });
 
         // Close on clicking backdrop
         bookingModal.addEventListener('click', (e) => {
@@ -1154,11 +1176,11 @@
                     successScreen.classList.add('active');
                     bookingForm.reset();
                 } else {
-                    alert('Oops! There was a problem submitting your form. Please try again.');
+                    errorScreen.classList.add('active');
                 }
             })
             .catch(error => {
-                alert('Oops! There was a problem submitting your form. Please try again.');
+                errorScreen.classList.add('active');
             })
             .finally(() => {
                 // Reset submit button state
