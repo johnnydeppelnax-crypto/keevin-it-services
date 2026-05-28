@@ -160,9 +160,11 @@
     <header>
         <nav>
             <div class="nav-left">
-                <a href="#" class="nav-link">HOME</a>
-                <a href="#services" class="nav-link">SERVICES</a>
-                <a href="#contact" class="nav-link">CONTACT</a>
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link">HOME</a></li>
+                    <li><a href="#services" class="nav-link">SERVICES</a></li>
+                    <li><a href="#contact" class="nav-link">CONTACT</a></li>
+                </ul>
             </div>
             <div class="nav-center">
                 <a href="#" class="logo"><img src="logo.webp?v=4" alt="Keevin IT Services Logo" class="logo-img"></a>
@@ -180,11 +182,13 @@
 
         <!-- MOBILE MENU OVERLAY -->
         <div class="mobile-menu-overlay">
-            <nav class="mobile-nav-links">
-                <a href="#" class="mobile-nav-link">HOME</a>
-                <a href="#services" class="mobile-nav-link">SERVICES</a>
-                <a href="#contact" class="mobile-nav-link">CONTACT</a>
-                <a href="#contact" class="btn-cta mobile-cta">BOOK A CONSULTATION</a>
+            <nav class="mobile-nav">
+                <ul class="mobile-nav-list">
+                    <li><a href="#" class="mobile-nav-link">HOME</a></li>
+                    <li><a href="#services" class="mobile-nav-link">SERVICES</a></li>
+                    <li><a href="#contact" class="mobile-nav-link">CONTACT</a></li>
+                    <li><a href="#contact" class="btn-cta mobile-cta">BOOK A CONSULTATION</a></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -520,7 +524,7 @@
                         </div>
                     </div>
                     <div class="card-image-replica">
-                        <img src="service-cctv.webp" alt="Bespoke CCTV surveillance camera installation by Keevin IT Services">
+                        <img src="service-cctv.webp" alt="Bespoke CCTV surveillance camera installation by Keevin IT Services" loading="lazy">
                     </div>
                 </div>
 
@@ -539,7 +543,7 @@
                         </div>
                     </div>
                     <div class="card-image-replica">
-                        <img src="service-biometric.webp" alt="Advanced cloud biometric fingerprint and face recognition access control system by Keevin IT Services">
+                        <img src="service-biometric.webp" alt="Advanced cloud biometric fingerprint and face recognition access control system by Keevin IT Services" loading="lazy">
                     </div>
                 </div>
 
@@ -558,7 +562,7 @@
                         </div>
                     </div>
                     <div class="card-image-replica">
-                        <img src="service-networking.webp" alt="High-speed enterprise network infrastructure setup featuring fiber optics and data racks by Keevin IT Services">
+                        <img src="service-networking.webp" alt="High-speed enterprise network infrastructure setup featuring fiber optics and data racks by Keevin IT Services" loading="lazy">
                     </div>
                 </div>
 
@@ -577,7 +581,7 @@
                         </div>
                     </div>
                     <div class="card-image-replica">
-                        <img src="service-software.webp" alt="Bespoke enterprise software development, custom web applications, and ERP solutions by Keevin IT Services">
+                        <img src="service-software.webp" alt="Bespoke enterprise software development, custom web applications, and ERP solutions by Keevin IT Services" loading="lazy">
                     </div>
                 </div>
 
@@ -974,12 +978,16 @@
         let isHeroVisible = true;
         let particleAnimationId = null;
 
+        let resizeTimeout;
         function resizeCanvas() {
             canvas.width = canvas.offsetWidth;
             canvas.height = canvas.offsetHeight;
         }
         resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(resizeCanvas, 150);
+        });
 
         class Particle {
             constructor() { this.reset(); }
