@@ -1414,8 +1414,8 @@ footer::before {
     .svc-panel-title { font-size: 0.45rem; letter-spacing: 0.04em; margin-top: 0.2rem; }
     .svc-top-left { top: 12vh; left: 3vw; }
     .svc-top-right { top: 12vh; right: 3vw; }
-    .svc-bottom-left { top: 22vh; left: 3vw; }
-    .svc-bottom-right { top: 22vh; right: 3vw; }
+    .svc-bottom-left { bottom: 11vh; left: 3vw; }
+    .svc-bottom-right { bottom: 11vh; right: 3vw; }
     .svc-top-center { display: flex !important; top: 7vh; left: 50%; transform: translateX(-50%) !important; animation-delay: 1.7s; }
 
     .hero-metrics { right: 1rem; bottom: 1.5rem; }

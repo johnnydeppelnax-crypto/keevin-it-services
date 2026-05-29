@@ -222,42 +222,28 @@
 
                 <!-- Service Diagram Panels - Positioned at hero corners -->
                 
-                <!-- TOP-LEFT: CCTV CAMERAS -->
-                <a href="#svc-cctv" class="svc-panel svc-top-left">
+                <!-- TOP-LEFT: IT & NON-IT STAFFING -->
+                <a href="#svc-staffing" class="svc-panel svc-top-left">
                     <svg viewBox="0 0 200 130" class="svc-icons">
-                        <!-- Dome camera -->
-                        <g stroke="#fff" stroke-width="1.5" fill="none" transform="translate(15,15)">
-                            <path d="M 10 35 A 20 20 0 0 1 50 35"/>
-                            <rect x="10" y="33" width="40" height="6" rx="2"/>
-                            <circle cx="30" cy="25" r="10"/>
-                            <circle cx="30" cy="25" r="5"/>
-                        </g>
-                        <!-- Bullet camera -->
-                        <g stroke="#fff" stroke-width="1.5" fill="none" transform="translate(80,12)">
-                            <rect x="5" y="10" width="45" height="25" rx="4"/>
-                            <circle cx="38" cy="22" r="8"/>
-                            <circle cx="38" cy="22" r="4"/>
-                            <path d="M 25 0 L 25 10"/>
-                            <rect x="20" y="-2" width="10" height="5" rx="2"/>
-                        </g>
-                        <!-- Monitor screen -->
-                        <g stroke="#fff" stroke-width="1.5" fill="none" transform="translate(15,65)">
-                            <rect x="0" y="0" width="50" height="35" rx="3"/>
-                            <line x1="15" y1="35" x2="35" y2="35"/>
-                            <line x1="10" y1="42" x2="40" y2="42"/>
-                            <line x1="25" y1="35" x2="25" y2="42"/>
-                            <!-- Grid lines inside screen -->
-                            <line x1="25" y1="5" x2="25" y2="30" stroke-width="0.5" opacity="0.4"/>
-                            <line x1="5" y1="17" x2="45" y2="17" stroke-width="0.5" opacity="0.4"/>
-                        </g>
-                        <!-- Recording indicator -->
-                        <g transform="translate(80,70)">
-                            <circle cx="10" cy="10" r="5" fill="none" stroke="var(--orange)" stroke-width="1.5"/>
-                            <circle cx="10" cy="10" r="2" fill="var(--orange)"/>
-                            <text x="22" y="14" fill="var(--orange)" font-family="var(--font-mono)" font-size="8" font-weight="700">REC</text>
+                        <!-- Sourcing and Talent Sifting node (Gold/White) -->
+                        <g stroke="#fff" stroke-width="1.5" fill="none" transform="translate(15,10)">
+                            <!-- Target / Sifting Reticle -->
+                            <circle cx="35" cy="30" r="20" stroke="var(--orange)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                            <!-- Sourced passive candidate (Central Gold Node) -->
+                            <circle cx="35" cy="24" r="7" fill="var(--orange)" stroke="none"/>
+                            <path d="M 23 42 A 12 12 0 0 1 47 42" stroke="var(--orange)" stroke-width="1.8" stroke-linecap="round"/>
+                            <!-- Sifted candidate left -->
+                            <circle cx="12" cy="32" r="5" stroke="#fff" stroke-width="1.2"/>
+                            <path d="M 4 45 A 8 8 0 0 1 20 45" stroke="#fff" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+                            <!-- Sifted candidate right -->
+                            <circle cx="58" cy="32" r="5" stroke="#fff" stroke-width="1.2"/>
+                            <path d="M 50 45 A 8 8 0 0 1 66 45" stroke="#fff" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+                            <!-- Talent mapping connection lines -->
+                            <line x1="23" y1="28" x2="16" y2="30" stroke="#fff" stroke-width="1" opacity="0.5"/>
+                            <line x1="47" y1="28" x2="54" y2="30" stroke="#fff" stroke-width="1" opacity="0.5"/>
                         </g>
                     </svg>
-                    <h4 class="svc-panel-title">CCTV CAMERAS</h4>
+                    <h4 class="svc-panel-title">IT & Non-IT<br>STAFFING</h4>
                 </a>
                 <div class="svc-line svc-line-tr"></div>
 
@@ -403,20 +389,42 @@
                 </a>
                 <div class="svc-line svc-line-bl"></div>
 
-                <!-- TOP-CENTER: IT & NON-IT STAFFING -->
-                <a href="#svc-staffing" class="svc-panel svc-top-center">
+                <!-- TOP-CENTER: CCTV CAMERAS -->
+                <a href="#svc-cctv" class="svc-panel svc-top-center">
                     <svg viewBox="0 0 200 130" class="svc-icons">
-                        <g stroke="#fff" stroke-width="1.5" fill="none" transform="translate(15,10)">
-                            <!-- Briefcase / Executive Hiring -->
-                            <rect x="15" y="15" width="40" height="28" rx="3" stroke="#fff" stroke-width="1.8"/>
-                            <path d="M 28 15 L 28 8 A 4 4 0 0 1 42 8 L 42 15" stroke="var(--orange)" stroke-width="2"/>
-                            <!-- Connecting nodes representing candidate mapping -->
-                            <circle cx="35" cy="29" r="4" fill="var(--orange)"/>
-                            <line x1="35" y1="29" x2="20" y2="35" stroke="#fff" stroke-width="1.2"/>
-                            <line x1="35" y1="29" x2="50" y2="35" stroke="#fff" stroke-width="1.2"/>
+                        <!-- Dome camera -->
+                        <g stroke="#fff" stroke-width="1.5" fill="none" transform="translate(15,15)">
+                            <path d="M 10 35 A 20 20 0 0 1 50 35"/>
+                            <rect x="10" y="33" width="40" height="6" rx="2"/>
+                            <circle cx="30" cy="25" r="10"/>
+                            <circle cx="30" cy="25" r="5"/>
+                        </g>
+                        <!-- Bullet camera -->
+                        <g stroke="#fff" stroke-width="1.5" fill="none" transform="translate(80,12)">
+                            <rect x="5" y="10" width="45" height="25" rx="4"/>
+                            <circle cx="38" cy="22" r="8"/>
+                            <circle cx="38" cy="22" r="4"/>
+                            <path d="M 25 0 L 25 10"/>
+                            <rect x="20" y="-2" width="10" height="5" rx="2"/>
+                        </g>
+                        <!-- Monitor screen -->
+                        <g stroke="#fff" stroke-width="1.5" fill="none" transform="translate(15,65)">
+                            <rect x="0" y="0" width="50" height="35" rx="3"/>
+                            <line x1="15" y1="35" x2="35" y2="35"/>
+                            <line x1="10" y1="42" x2="40" y2="42"/>
+                            <line x1="25" y1="35" x2="25" y2="42"/>
+                            <!-- Grid lines inside screen -->
+                            <line x1="25" y1="5" x2="25" y2="30" stroke-width="0.5" opacity="0.4"/>
+                            <line x1="5" y1="17" x2="45" y2="17" stroke-width="0.5" opacity="0.4"/>
+                        </g>
+                        <!-- Recording indicator -->
+                        <g transform="translate(80,70)">
+                            <circle cx="10" cy="10" r="5" fill="none" stroke="var(--orange)" stroke-width="1.5"/>
+                            <circle cx="10" cy="10" r="2" fill="var(--orange)"/>
+                            <text x="22" y="14" fill="var(--orange)" font-family="var(--font-mono)" font-size="8" font-weight="700">REC</text>
                         </g>
                     </svg>
-                    <h4 class="svc-panel-title">IT & Non-IT<br>STAFFING</h4>
+                    <h4 class="svc-panel-title">CCTV CAMERAS</h4>
                 </a>
 
                 <!-- Magic Dust Flow Lines - Full hero overlay -->
