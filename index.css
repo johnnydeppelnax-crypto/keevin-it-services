@@ -975,6 +975,8 @@ footer::before {
 .metrics {
     padding: 10rem 4rem;
     background: transparent; /* Seamless connection */
+    position: relative;
+    overflow: hidden;
 }
 
 .bento-grid {
