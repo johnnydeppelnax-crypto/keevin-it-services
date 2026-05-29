@@ -1083,20 +1083,25 @@
 
 
         // SOHub-Style Stacked Cards — CSS sticky does the stacking
-        // GSAP only adds subtle scale-down + opacity when a card gets buried
+        // GSAP only adds subtle scale-down + opacity on desktop viewports to avoid mobile main-thread layout thrashing
         const cards = gsap.utils.toArray('.service-card');
 
-        cards.forEach((card, i) => {
-            if (i < cards.length - 1) {
-                gsap.to(card, {
-                    scale: 0.98,
-                    opacity: 0.6,
-                    ease: 'none',
-                    scrollTrigger: {
-                        trigger: cards[i + 1],
-                        start: 'top 80%',
-                        end: 'top 10%',
-                        scrub: true
+        ScrollTrigger.matchMedia({
+            // Desktop and tablet viewports (>= 769px) where performance overhead is low
+            "(min-width: 769px)": function() {
+                cards.forEach((card, i) => {
+                    if (i < cards.length - 1) {
+                        gsap.to(card, {
+                            scale: 0.98,
+                            opacity: 0.6,
+                            ease: 'none',
+                            scrollTrigger: {
+                                trigger: cards[i + 1],
+                                start: 'top 80%',
+                                end: 'top 10%',
+                                scrub: true
+                            }
+                        });
                     }
                 });
             }

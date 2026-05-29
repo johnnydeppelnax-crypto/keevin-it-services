@@ -767,7 +767,7 @@ a.svc-panel {
     border-top: var(--card-tab-height) solid var(--bg-gold); 
     
     box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.08);
-    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
     margin-top: 0;
 }
 /* ============================================================ */
@@ -1473,6 +1473,7 @@ footer::before {
     .card-image-replica img {
         width: 65%;
         max-width: 280px;
+        filter: drop-shadow(0 8px 16px rgba(0,0,0,0.35)) !important;
     }
 
     .card-tags { gap: 0.4rem; margin-top: 1rem; }
