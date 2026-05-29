@@ -97,15 +97,15 @@ body::before {
 /* CCTV Observer */
 .cctv-container {
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 48px;
+    height: 48px;
     z-index: 31000; /* Overlap header but keep pointer-events none */
     pointer-events: none;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: opacity 0.3s ease;
-    margin-right: 0.25rem; /* Extra breathing space before button */
+    margin-right: 1.5rem; /* Pushes the camera away from the CTA button so the rotating bracket never overlaps */
 }
 
 .cctv-camera {
