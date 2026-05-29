@@ -145,6 +145,7 @@
     <!-- Styles in index.css -->
 </head>
 <body>
+    <div class="bg-gradient-fixed"></div>
     <div class="cursor">
         <div class="cursor-dot"></div>
         <div class="cursor-ring"></div>
@@ -1063,21 +1064,7 @@
         const heroSection = document.querySelector('.hero');
         if (heroSection) heroObserver.observe(heroSection);
 
-        // Pinned Word Animation (SOHub-style)
-        const revealText = document.querySelector("#reveal-text");
-        const words = revealText.innerText.split(" ");
-        revealText.innerHTML = words.map(word => `<span>${word} </span>`).join("");
 
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".statement",
-                start: "top top",
-                end: "+=200%",
-                pin: true,
-                scrub: 1
-            }
-        });
-        tl.to(".statement-text span", { color: "#FFFFFF", stagger: 0.1 });
 
         // SOHub-Style Stacked Cards — CSS sticky does the stacking
         // GSAP only adds subtle scale-down + opacity when a card gets buried

@@ -56,11 +56,22 @@ html.lenis { height: auto; }
 body {
     font-family: 'Inter', sans-serif;
     /* Rich Fixed Gradient: Dark amber edges to bright gold center for the WHOLE site */
-    background: radial-gradient(circle at center, #FFD700 0%, #B8860B 45%, #2a1e00 100%);
-    background-attachment: fixed;
+    background-color: #2a1e00;
     color: var(--text-primary);
     overflow-x: hidden;
     min-height: 100vh;
+}
+
+/* Rich Hardware-Accelerated Fixed Gradient: Centered gold radial glow */
+.bg-gradient-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #FFD700 0%, #B8860B 45%, #2a1e00 100%);
+    z-index: -2;
+    pointer-events: none;
 }
 
 /* Lightweight noise texture overlay */
@@ -670,10 +681,7 @@ a.svc-panel {
     color: #FFFFFF; /* High contrast white on gold */
 }
 
-.statement-text span {
-    color: rgba(255, 255, 255, 0.4); /* Subtle white reveal */
-    transition: color 0.1s linear;
-}
+
 
 /* ========================================
    SERVICES - Cinematic Stacking Cards
