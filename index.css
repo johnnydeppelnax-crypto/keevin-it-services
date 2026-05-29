@@ -759,6 +759,7 @@ a.svc-panel {
     gap: 4rem;
     align-items: center;
     position: sticky;
+    overflow: hidden; /* Prevent glint effect from bleeding horizontally */
     
     /* The "Gold Tab" Header - Linked to Architecture */
     border-top: var(--card-tab-height) solid var(--bg-gold); 
@@ -963,6 +964,7 @@ footer::before {
     color: var(--orange);
     position: relative;
     z-index: 1;
+    overflow: hidden; /* Prevent glint effect from bleeding horizontally */
 }
 
 .footer-cta span {
