@@ -15,9 +15,10 @@
     
     <style>
         :root {
-            --bg-dark: #0d0903;
+            --bg-dark: #2a1e00;
             --bg-gold: #c89528;
             --orange: #ff6b2b;
+            --orange-text: #d84b12; /* Rich high-contrast orange for perfect readability on white bg */
             --text-light: #f5f2eb;
             --text-dark: #a19b8f;
             --font-sans: 'Space Grotesk', sans-serif;
@@ -39,6 +40,18 @@
             padding: 4rem 2rem;
             position: relative;
             overflow-x: hidden;
+        }
+
+        /* Fixed GPU-accelerated Golden fixed background */
+        .bg-gradient-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #FFD700 0%, #B8860B 45%, #2a1e00 100%);
+            z-index: -2;
+            pointer-events: none;
         }
 
         /* Ambient Glow effects matching main site */
@@ -126,22 +139,20 @@
 
         /* Content Panel */
         .legal-panel {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: #FFFFFF;
             border-radius: 24px;
             padding: 3.5rem;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 107, 43, 0.15);
         }
 
         h2 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--bg-gold);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--orange-text);
             margin: 2.5rem 0 1rem;
             letter-spacing: 0.02em;
-            border-bottom: 1px solid rgba(200, 149, 40, 0.1);
+            border-bottom: 1px solid rgba(255, 107, 43, 0.18);
             padding-bottom: 0.5rem;
         }
         h2:first-of-type {
@@ -149,10 +160,11 @@
         }
 
         p {
-            font-size: 0.95rem;
-            color: var(--text-dark);
+            font-size: 0.98rem;
+            color: var(--orange-text);
             margin-bottom: 1.5rem;
             line-height: 1.65;
+            font-weight: 500;
         }
 
         ul {
@@ -162,17 +174,22 @@
         }
 
         li {
-            font-size: 0.95rem;
-            color: var(--text-dark);
+            font-size: 0.98rem;
+            color: var(--orange-text);
             margin-bottom: 0.75rem;
             position: relative;
             padding-left: 1.5rem;
+            font-weight: 500;
+        }
+        li strong {
+            color: #222222; /* High contrast black for key headers inside bullet points */
+            font-weight: 700;
         }
         li::before {
             content: '✦';
             position: absolute;
             left: 0;
-            color: var(--orange);
+            color: var(--orange-text);
             font-size: 0.75rem;
             top: 2px;
         }
@@ -195,6 +212,7 @@
     </style>
 </head>
 <body>
+    <div class="bg-gradient-fixed"></div>
 
     <div class="container">
         <!-- Back Button -->
