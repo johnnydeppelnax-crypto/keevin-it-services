@@ -542,6 +542,7 @@ a.svc-panel {
 .svc-top-right { top: 12vh; right: 2.5vw; animation-delay: 0.8s; }
 .svc-bottom-left { bottom: 4vh; left: 2.5vw; animation-delay: 1.1s; }
 .svc-bottom-right { bottom: 4vh; right: 2.5vw; animation-delay: 1.4s; }
+.svc-top-center { display: none !important; }
 
 @keyframes panelReveal {
     0% { opacity: 0; transform: scale(0.9); }
@@ -1411,10 +1412,11 @@ footer::before {
     /* Scale corner service panels for mobile */
     .svc-icons { width: 70px; height: 45px; }
     .svc-panel-title { font-size: 0.45rem; letter-spacing: 0.04em; margin-top: 0.2rem; }
-    .svc-top-left { top: 8vh; left: 3vw; }
-    .svc-top-right { top: 8vh; right: 3vw; }
-    .svc-bottom-left { bottom: 12vh; left: 3vw; }
-    .svc-bottom-right { bottom: 12vh; right: 3vw; }
+    .svc-top-left { top: 12vh; left: 3vw; }
+    .svc-top-right { top: 12vh; right: 3vw; }
+    .svc-bottom-left { top: 22vh; left: 3vw; }
+    .svc-bottom-right { top: 22vh; right: 3vw; }
+    .svc-top-center { display: flex !important; top: 7vh; left: 50%; transform: translateX(-50%) !important; animation-delay: 1.7s; }
 
     .hero-metrics { right: 1rem; bottom: 1.5rem; }
     .hero-metrics .metric-item { font-size: 0.55rem; }
@@ -1594,8 +1596,8 @@ footer::before {
     .hero-cityscape { max-width: 92vw; }
     .cn-tower-logo img { width: 160px; }
 
-    /* Hide service corner panels on small phones — too cluttered and untappable */
-    .svc-panel { display: none !important; }
+    /* Show service corner panels at the top on small phones as requested by the user */
+    .svc-panel { display: flex !important; opacity: 1 !important; }
 
     .statement-text { font-size: 7.5vw; }
 
