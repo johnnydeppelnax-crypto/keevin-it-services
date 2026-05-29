@@ -23,7 +23,6 @@ html {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: clip;
 }
 
 body {
@@ -31,7 +30,6 @@ body {
     padding: 0;
     width: 100%;
     max-width: 100vw;
-    overflow-x: clip;
 }
 
 :root {
@@ -64,7 +62,6 @@ body {
     /* Rich Fixed Gradient: Dark amber edges to bright gold center for the WHOLE site */
     background-color: #2a1e00;
     color: var(--text-primary);
-    overflow-x: hidden;
     min-height: 100vh;
 }
 
