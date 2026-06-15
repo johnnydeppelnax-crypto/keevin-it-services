@@ -972,6 +972,7 @@ footer::before {
     position: relative;
     z-index: 1;
     overflow: hidden; /* Prevent glint effect from bleeding horizontally */
+    text-transform: uppercase;
 }
 
 .footer-cta span {
